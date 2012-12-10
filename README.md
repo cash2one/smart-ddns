@@ -3,10 +3,11 @@
 ##项目基本信息
 
 __简称__: Smart DDns<br/>
-__全称__: Smart Dev DNS
+__全称__: Smart Dev DNS<br/>
 __人员__: 共3人，王根意(项目组长)、和那些个还没报名的你们！<br/>
 __时间__: 共2个半星期，2012-12-12 ～ 2013-12-28<br/>
 __目标__: 用户需要修给开发环境DNS的时候，只要访问一个Web页面即可实现<br/>
+__地址__: http://git.corp.anjuke.com/gywang/smart_ddns<br/>
 
 ##Smart DDns要解决什么问题？
 
