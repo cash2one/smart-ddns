@@ -19,13 +19,13 @@
 
 本期主要实现动态DNS的功能，及用户的IP修改后能方便地进行修改。
 
-__动态DNS的Zone：__d.corp.anjuke.com<br>
-__用户的动态DNS记录：__[xxx.]${username}.d.corp.anjuke.com
+__动态DNS的Zone：__d.corp.anjuke.com<br/>
+__用户的动态DNS记录：__[xxx.]${username}.d.corp.anjuke.com<br/>
 
 用户的动态DNS记录类型均为A记录。其中，${username}为域账户名，xxx可已用户自定义
 
-__${username}.d.corp.anjuke.com：__用户只可以修改记录值
-__xxx.${username}.d.corp.anjuke.com：__用户可以增删改
+__${username}.d.corp.anjuke.com：__用户只可以修改记录值<br/>
+__xxx.${username}.d.corp.anjuke.com：__用户可以增删改<br/>
 
 ###主要功能模块
 
