@@ -1,5 +1,5 @@
 
-
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,7 +11,7 @@
         
 
         <style type="text/css">
- body {
+ td{
                 margin-left: 0px;
                 margin-top: 0px;
                 margin-right: 0px;
@@ -140,13 +140,13 @@ font-size:12px;
 	height: 27px;
 	padding-left:40px;
 	padding-top: 1px;
-	background-image: url(../images/menu_toptit.jpg);
+	background-image: url(images/menu_toptit.jpg);
 	background-repeat: repeat-x;
 }
 .menu_item {
 	font-size: 12px;
 	color: #333333;
-	background-image: url(../images/menu_item_bg.jpg);
+	background-image: url(images/menu_item_bg.jpg);
 	background-repeat: no-repeat;
 	background-color:#FFFFFF;
 	background-position: center center;
@@ -169,8 +169,8 @@ font-size:12px;
     
 function del(newsid)
             {
-                if(confirm("??????"))
-                    gourl("delnews?newsid="+newsid+"&pageno=<%=pageno%>");
+                if(confirm("确定删除么？"))
+                    gourl("");
 
             }
             
@@ -230,24 +230,7 @@ rowobj.style.background="#E8EFF7";
 }
 
 
-function deleteall()
-{
-var cklist=document.getElementsByName("newsid");
-var idlist="";
-for(var i=0;i<cklist.length;i++)
-{
-var ckitem=cklist.item(i);
-if(ckitem.checked==true)
-idlist=idlist+" "+ckitem.id;
-}
-if(idlist=="")
-window.alert("??????????");
-else
-{
-window.alert("???????");
-window.alert("????????"+idlist);
-}
-}
+
 
 		
 		YAHOO.example.DDApp = function() {

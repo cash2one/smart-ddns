@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class first_0020page_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -99,9 +99,9 @@ public final class first_0020page_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("    <tr>\n");
       out.write("        <td height=\"90\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n");
       out.write("                <tr>\n");
-      out.write("                    <td width=\"500\" height=\"60\" background=\"images/top.jpg\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" ><font size=\"14\" font-family=\"Comic Sans MS\n");
-      out.write(" \"><strong>&nbsp;SMART_DDNS</strong></font></td>\n");
-      out.write("                    <td align=\"right\" background=\"images/top.jpg\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><img src=\"images/home.jpg\" width=\"70\" height=\"50\" style=\"cursor:pointer;\" onClick=\"goiframes('main.html');\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\"images/exit.jpg\" width=\"70\" height=\"50\" style=\"cursor:pointer;\" >&nbsp;</td>\n");
+      out.write("                    <td width=\"500\" height=\"60\" background=\"images/back1.png\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" >\n");
+      out.write("</td>\n");
+      out.write("                    <td align=\"right\" background=\"images/top.jpg\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><img src=\"images/home.jpg\" width=\"70\" height=\"50\" style=\"cursor:pointer;\" onClick=\"goiframes('firstpage.jsp');\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\"images/exit.jpg\" width=\"70\" height=\"50\" style=\"cursor:pointer;\" >&nbsp;</td>\n");
       out.write("                </tr>\n");
       out.write("                <tr>\n");
       out.write("                    <td height=\"30\" colspan=\"2\" valign=\"middle\" background=\"images/por_bkg.gif\" ><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n");
@@ -124,20 +124,20 @@ public final class first_0020page_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                            <tr>\n");
       out.write("                                <td valign=\"top\" bgcolor=\"#FFFFFF\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n");
       out.write("                                        <tr>\n");
-      out.write("                                            <td class=\"menu_item\"><a  onClick=\"goiframes('main.html');\">系统首页</a></td>\n");
+      out.write("                                            <td class=\"menu_item\"><a  onClick=\"goiframes('firstpage.jsp');\" style=\"cursor:pointer\">系统首页</a></td>\n");
       out.write("                                        </tr>\n");
       out.write("                                        \n");
       out.write("                                        <tr>\n");
-      out.write("                                            <td class=\"menu_item\"><a  onClick=\"goiframes('newslist1.html');\">修改记录值</a></td>\n");
+      out.write("                                            <td class=\"menu_item\"><a  onClick=\"goiframes('secondpage.jsp');\" style=\"cursor:pointer\">修改记录值</a></td>\n");
       out.write("                                        </tr>\n");
       out.write("                                       \n");
       out.write("\t\t\t\t\t\t\t\t\t\t \n");
       out.write("                                        <tr>\n");
-      out.write("                                            <td class=\"menu_item\"><a  onClick=\"goiframes('');\">我的DNS记录</a></td>\n");
+      out.write("                                            <td class=\"menu_item\"><a  onClick=\"goiframes('modify.jsp');\" style=\"cursor:pointer\">我的DNS记录</a></td>\n");
       out.write("                                        </tr>\n");
       out.write("\n");
       out.write("                                        <tr>\n");
-      out.write("                                            <td class=\"menu_item\">退出系统</td>\n");
+      out.write("                                            <td class=\"menu_item\"><a style=\"cursor:pointer\">退出系统</a></td>\n");
       out.write("                                        </tr>\n");
       out.write("                                    </table></td>\n");
       out.write("                            </tr>\n");

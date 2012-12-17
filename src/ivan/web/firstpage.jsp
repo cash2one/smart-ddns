@@ -1,0 +1,34 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>欢迎访问SMART_DDNS系统</title>
+ <style type="text/css">
+            td {
+                margin-left: 2px;
+                margin-top: 2px;
+                margin-right: 2px;
+                margin-bottom: 0px;
+                font-family: "宋体";
+                font-size: 12px;
+				
+				background-repeat: repeat-x;
+            }
+        </style>
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="450" align="center"><img src="images/smart_ddns1.png" width="728" height="430"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+     <td align="center" style="line-height:20px;">雄鹰计划：SMART_DDNS &nbsp; &nbsp;设计开发：王根意、肖云龙、杜一凡<br>
+开发时间：2012.12.16 &nbsp;&nbsp;　<br>
+支持分辨率：1024*768~1366*768&nbsp;&nbsp;支持IE9.0+、Firefox5.0+、Chrome11.0+</td>
+  </tr>
+</table>
+</body>
+</html>
