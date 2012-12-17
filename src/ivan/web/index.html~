@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -81,16 +81,16 @@
                             <tr>
                                 <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td class="menu_item"><a  onClick="goiframes('firstpage.jsp');" style="cursor:pointer">系统首页</a></td>
+                                            <td class="menu_item"><a  onClick="goiframes('firstpage.html');" style="cursor:pointer">系统首页</a></td>
                                         </tr>
                                         
                                         <tr>
-                                            <td class="menu_item"><a  onClick="goiframes('secondpage.jsp');" style="cursor:pointer">修改记录值</a></td>
+                                            <td class="menu_item"><a  onClick="goiframes('secondpage.html');" style="cursor:pointer">修改记录值</a></td>
                                         </tr>
                                        
 										 
                                         <tr>
-                                            <td class="menu_item"><a  onClick="goiframes('modify.jsp');" style="cursor:pointer">我的DNS记录</a></td>
+                                            <td class="menu_item"><a  onClick="goiframes('modify.html');" style="cursor:pointer">我的DNS记录</a></td>
                                         </tr>
 
                                         <tr>
@@ -103,7 +103,7 @@
                             </tr>
                         </table></td>
                     <td width="8" align="center" id="actiontr" background="images/main_onoff_bg.jpg" style="cursor:pointer;" onClick="switchmenu();"><img id="actionimg" src="images/FClose.gif" alt="" width="8" height="100"  /></td>
-                    <td valign="top"><iframe src="firstpage.jsp"  height="100%" width="100%"  name="mainiframes" id="mainiframes"  frameborder="0" scrolling="auto"></iframe></td>
+                    <td valign="top"><iframe src="firstpage.html"  height="100%" width="100%"  name="mainiframes" id="mainiframes"  frameborder="0" scrolling="auto"></iframe></td>
     </tr>
 </table></td>
 </tr>
