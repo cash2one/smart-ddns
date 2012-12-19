@@ -312,7 +312,6 @@ function showbg()
 
     holder.style.display="block";
 }
-
 function disdivbox()
 {
     disbg();
@@ -380,8 +379,8 @@ function disbg()
 </td>
         
         <td width="13%" align="center"  class="topandright">获取该用户IP</td>
-        <td width="12%" align="center"  class="onlytop">UPDATE BANDING IP：</td>
-        <td width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.html');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.html');">MODIFY</span></td>
+        <td width="10%" align="center"  class="onlytop">UPDATE BANDING IP：</td>
+        <td width="17%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.html');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.html');">MODIFY</span></td>
       </tr>
 <tr>
         <td width="3%" height="21" align="center" background="images/grid-blue-hd.gif" class="topandright" id="3"><label>

@@ -1,10 +1,6 @@
 td {
     font-size: 12px;
 }
-.write{
- font-family: "宋体";
- font-size: 12px;
-}
 .vcenter
 {
     position: relative;

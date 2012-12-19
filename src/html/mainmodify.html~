@@ -5,17 +5,18 @@
          <meta http-equiv="Pragma" CONTENT="no-cache">
         <meta http-equiv="Cache-Control" CONTENT="no-cache">
         <meta http-equiv="Expires" CONTENT="0">
+
 <title>JSP Page</title>
         
         
 
-        <style type="text/css">
+ <style type="text/css">
  td{
                 margin-left: 0px;
                 margin-top: 0px;
                 margin-right: 0px;
                 margin-bottom: 0px;
-                font-family: "??";
+                font-family: "宋体";
                 font-size: 12px;
             }
 
@@ -34,18 +35,8 @@ display:none;
  z-index:1003;
  display:none;
 }
-.btnQQ {
-	background-image: url(images/button1.jpg); 
-                                       
-	font-size: 12px;               
-	height: 22px;                     
-	width:71px;	                   
-	border: 1px;                     
-}
 
-td{
-font-size:12px;
-}
+
 .borderall {
 	border: 1px solid #999;
 }
@@ -373,7 +364,7 @@ function disbg()
         <td colspan="5"><table width="100%" border="0" cellpadding="0" cellspacing="0">
           <tr width="100%">
             <td width="66%" height="25" background="images/backt.jpg">&nbsp;</td>
-            <td width="34%" align="right" background="images/backt.jpg"><img src="images/sign.gif" width="20" height="16"  style="cursor:pointer;" /><span  style="cursor:pointer;">UPDATE</span><img src="images/done.gif" width="20" height="16" onClick="window.parent.showfuncbox('????',800,600,'newslist.html');" style="cursor:pointer;"/><span onClick="window.parent.showfuncbox('????',800,600,'newslist.html');" style="cursor:pointer;">ADD</span></td>
+            <td width="34%" align="right" background="images/backt.jpg"><img src="images/sign.gif" width="20" height="16"  style="cursor:pointer;" /><span  style="cursor:pointer;">UPDATE</span><img src="images/done.gif" width="20" height="16" onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage1.html');" style="cursor:pointer;"/><span onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage1.html');" style="cursor:pointer;">ADD</span></td>
           </tr>
         </table></td>
         </tr>
