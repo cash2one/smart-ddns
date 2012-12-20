@@ -28,17 +28,26 @@
         mysql_query($sql,$con);
         mysql_close($con);
     }
-    $post_ip = $_POST["update_ip"];
-    if($post_ip)
-        if(isIP($post_ip))
-        {
-            addRecord('@',$post_ip,$userinfo['username']);
-        }
-        else
-        {
-        }
-    else
+
+    if(isset($_POST['name']))
     {
-        addRecord('@',$_SERVER['REMOTE_ADDR'],$userinfo['username']);
+        $dnsname = $_POST['name'];
+        if(isset($_POST['add_ip']))
+            $post_ip = $_POST['add_ip'];
+            if(isIP($post_ip))
+                addRecord($dnsname,$post_ip,$userinfo['username']);
+        else
+            addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
     }
+    else 
+    {
+        $dnsname = '@';
+        if(isset($_POST['update_ip'])) 
+            $post_ip = $_POST['update_ip'];
+            if(isIP($post_ip))
+                addRecord($dnsname,$post_ip,$userinfo['username']);
+        else
+            addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
+    }
+
 ?>

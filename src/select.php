@@ -10,4 +10,13 @@
         else
             return "未设置";
     }
+    
+    function getAll($username)
+    {
+        require("conn.php");
+        $sql = "select * from $dns_table where owner='$username'";
+        $result = mysql_query($sql,$con);
+        mysql_close($con);
+        return $result;
+    }
 ?>
