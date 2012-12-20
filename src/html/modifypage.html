@@ -24,16 +24,26 @@ body {
       <td width="25%" class="write" height="244" valign="top"><strong>用户须知:</strong><br><br>1、动态DNS的ZONE:d.corp.anjuke.com. <br><br>2、用户的动态DNS记录：[***].username.d.corp.anjuke.com.用户可自行根据需要修改username及DNS记录所对应IP </td>
     <td height="244" align="center" valign="bottom"><table width="80%" border="0" cellspacing="0" cellpadding="0" >
       <tr>
-        <td width="50%" align="right"><font size="3"><strong>THE BANDING IP:&nbsp;</strong></font></td>
-        <td>获取用户绑定IP</td>
+        <td width="50%" align="right"><font size="3"><strong>已绑定IP：&nbsp;</strong></font></td>
+        <td><?php $u=$userinfo['username']; $d='@';  echo getBindIP($u,$d); ?></td>
       </tr>
       <tr>
         <td width="30%" align="center">&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
+
+      <tr>
+        <td width="50%" align="right"><font size="3"><strong>当前IP：&nbsp;</strong></font></td>
+        <td><?php echo $_SERVER['REMOTE_ADDR']; ?></td>
+      </tr>
+      <tr>
+        <td width="30%" align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <form action="../update.php" method="post">
      <tr>
-        <td  align="right"><font size="3"><strong>USERNAME:&nbsp;</strong></font></td>
-        <td>获取用户USERNAME</td>
+        <td  align="right"><font size="3"><strong>自定义IP：&nbsp;</strong></font></td>
+        <td><input type="text" name="update_ip" /></td>
       </tr>
       <tr>
         <td width="30%" align="center">&nbsp;</td>
@@ -47,8 +57,8 @@ body {
       </tr>
       <tr>
         <td height="30" align="right"><input name="button" type="submit" class="btnQQ" id="button" value=" UPDATE " ></td>
-        <td align="center"><input name="button" type="submit" class="btnQQ" id="button" value=" EXIT " onClick="parent.disdivbox();"></td>
       </tr>
+  </form>
       </font>
     </table></td>
   </tr>
