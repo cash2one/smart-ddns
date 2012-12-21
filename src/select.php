@@ -19,4 +19,13 @@
         mysql_close($con);
         return $result;
     }
+
+    function getOne($id,$username)
+    {
+        require("conn.php");
+        $sql = "select name,value from $dns_table where id=$id and owner='$username'";
+        $result = mysql_query($sql,$con);
+        mysql_close($con);
+        return $result; 
+    }
 ?>

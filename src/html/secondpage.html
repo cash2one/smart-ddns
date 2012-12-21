@@ -401,10 +401,10 @@ function disbg()
       </tr>
 
       <?php $result=getAll($userinfo['username']); while($row = mysql_fetch_array($result)) { 
-        ?>
-      <tr  onMouseOver="mover(1);" onMouseOut="mout(1);">
+        $id=$row['id']; ?>
+        <tr  onMouseOver="mover(<?php echo $id; ?>);" onMouseOut="mout(<?php echo $id; ?>);">
         <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
-          <input type="checkbox" name="newsid" value="1" id="c1" />
+            <input type="checkbox" name="newsid" value="1" id="c<?php echo $id; ?>" />
         </td>
         <td align="center" class="topandright2" onClick="rowselect(1);">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
@@ -413,8 +413,8 @@ function disbg()
 </table>
 </td>
         <td align="center" class="topandright2" onClick="rowselect(1);" ><?php echo $row['owner']; ?></td>
-        <td align="center" class="onlytop" onClick="rowselect(1);"><img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php');">MODIFY</span></td>
-        <td align="center" class="onlytop">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(1)"/><span style="cursor:pointer" onClick="del(1)">DELETE</span></td>
+        <td align="center" class="onlytop" onClick="rowselect(1);"><img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span></td>
+        <td align="center" class="onlytop">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(1)"/><span style="cursor:pointer" onClick="del(1)"><a href="delete.php?id=<?php echo $id; ?>">DELETE</a></span></td>
       </tr>
       <?php } ?> 
 <!--
