@@ -1,6 +1,6 @@
 <?php
-    require_once("config.php");
     require_once("login.php");
+    require("sql2config.php");
     function deleteRecord($id,$username)
     {
         require("conn.php");
@@ -15,4 +15,5 @@
         $id = $_GET['id'];
         deleteRecord($id,$username);
     }
+    writeConfig();
 ?>

@@ -1,8 +1,6 @@
 <?php
-    require_once("config.php");
     require_once("login.php");
-    global $userinfo;
-
+    require("sql2config.php");
     function isIP($tmp_ip)
     {
         $ip = explode(".",$tmp_ip);
@@ -77,5 +75,5 @@
         else
             addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
     }
-
+    writeConfig();
 ?>
