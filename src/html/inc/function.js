@@ -135,8 +135,16 @@ function showfuncbox(title,width,height,src)
 
 function editDns()
 {
-    update_ip = $("#update_ip").value;
-    console.log(update_ip);
+    update_ip = $("#update_ip").val();
+    $.post("update.php", {'update_ip':update_ip}, function(result) {
+        if(result['status']) {
+            randomnum = Math.random();
+            parent.goiframes('secondpage.php?random=' + randomnum);
+            parent.disdivbox()
+        } else {
+            alert(result['msg']);
+        }
+    }, "json");
 }
 
 function disdivbox()

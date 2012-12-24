@@ -80,7 +80,8 @@
                 echo json_encode($result);
             } else {
                 $result['status'] = false;
-                 echo json_encode($result);
+                if(! $result['status']) { $result['msg'] = "IP不符合规范"; }
+                echo json_encode($result);
             }
         } else {
             $result['status'] = addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
