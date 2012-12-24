@@ -23,8 +23,15 @@
             $sql = "update $dns_table set value='$update_ip' where id=$row[0]";
         else
             $sql = "insert into $dns_table (name,value,owner) values ('$dnsname','$update_ip','$username')";
-        mysql_query($sql,$con);
+
+        $result2 = mysql_query($sql,$con);
         mysql_close($con);
+
+        if($result2) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function modifyRecord($id,$dnsname,$modify_ip)
@@ -66,14 +73,19 @@
     else 
     {
         $dnsname = '@';
-        if(isset($_POST['update_ip']) && $_POST['update_ip']) 
-        {
+        if(isset($_POST['update_ip']) && $_POST['update_ip']) {
             $post_ip = $_POST['update_ip'];
-            if(isIP($post_ip))
-                addRecord($dnsname,$post_ip,$userinfo['username']);
+            if(isIP($post_ip)) {
+                $result['status'] = addRecord($dnsname,$post_ip,$userinfo['username']);
+                echo json_encode($result);
+            } else {
+                $result['status'] = false;
+                 echo json_encode($result);
+            }
+        } else {
+            $result['status'] = addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
+            echo json_encode($result);
         }
-        else
-            addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
     }
     writeConfig();
 ?>

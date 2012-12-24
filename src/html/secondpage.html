@@ -136,8 +136,10 @@ display:none;
 	background-image: url(html/images/menu_item_bg.jpg);
 	background-repeat: no-repeat;
 	background-color:#FFFFFF;
-	background-position: center center;
-	padding-top:3px;
+	background-position: center centere
+	padding-toe:3px;
+    header("Location: /");
+    header("Location: /");
 	padding-left: 40px;
 	height: 28px;
 
@@ -149,7 +151,6 @@ display:none;
 <script type="text/javascript" src="html/inc/build/dragdrop/dragdrop-debug.js" ></script>
  <script type="text/javascript" src="html/inc/build/animation/animation-min.js"></script>
 <script language="javascript" src="html/inc/function.js" ></script>
- <script language="javascript" src="html/inc/time.js" ></script>
   <link href="html/inc/style.css" rel="stylesheet" type="text/css" />
 
 <script language="javascript">
@@ -157,7 +158,7 @@ display:none;
 function del(newsid)
             {
                 if(confirm("确定删除么？"))
-                  gourl("");
+                  gourl("delete.php?id="+newsid);
                     
              
 
@@ -288,7 +289,7 @@ function showfuncbox(title,width,height,src)
     funcbox.style.top=document.body.clientHeight/2+document.body.scrollTop-height/2;
 
     funcbox.style.display="block";
-}l
+}
 
 function showdivbox(title,width,height)
 {
@@ -404,7 +405,7 @@ function disbg()
 
       <?php $result=getAll($userinfo['username']); while($row = mysql_fetch_array($result)) { 
         $id=$row['id']; ?>
-        <tr  onMouseOver="mover(<?php echo $id; ?>);" onMouseOut="mout(<?php echo $id; ?>);">
+        <tr id="<?php echo $id; ?>" onMouseOver="mover(<?php echo $id; ?>);" onMouseOut="mout(<?php echo $id; ?>);">
         <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
             <input type="checkbox" name="ipsid" value="<?php echo $id; ?>" id="c<?php echo $id; ?>" />
         </td>
@@ -416,7 +417,7 @@ function disbg()
 </td>
         <td align="center" class="topandright2" onClick="rowselect(<?php echo $id; ?>);" ><?php echo $row['owner']; ?></td>
         <td align="center" class="onlytop" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span></td>
-        <td align="center" class="onlytop">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)"><a href="delete.php?id=<?php echo $id; ?>">DELETE</a></span></td>
+        <td align="center" class="onlytop">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span></td>
       </tr>
       <?php } ?> 
 <!--

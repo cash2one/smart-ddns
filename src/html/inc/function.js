@@ -133,6 +133,12 @@ function showfuncbox(title,width,height,src)
     funcbox.style.display="block";
 }
 
+function editDns()
+{
+    update_ip = $("#update_ip").value;
+    console.log(update_ip);
+}
+
 function disdivbox()
 {
     disbg();
