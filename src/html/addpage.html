@@ -12,22 +12,34 @@ body {
                 margin-bottom: 0px;
                 font-family: "宋体";
                 font-size: 12px;
-	        background-image:url(images/welbg.jpg);
+	        background-image:url(html/images/welbg.jpg);
 		background-repeat: repeat-x;
             }
+.btnQQ {
+    background-image: url(html/images/button.jpg);
+    font-size: 12px;
+    height: 22px;
+    width:71px;	
+    border: 0px outset;
+}
+
             
 </style>
 </head>
 
 <body >
-<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" >
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-      <td width="25%" class="write" height="244" valign="top"><strong>用户须知:</strong><br><br>1、动态DNS的ZONE:d.corp.anjuke.com. <br><br>2、用户的动态DNS记录：[***].username.d.corp.anjuke.com.用户可自行根据需要修改username及DNS记录所对应IP </td>
+      <td width="15%" class="write" height="244" valign="top"><strong>用户须知:</strong><br><br>1、动态DNS的ZONE:d.corp.anjuke.com. <br><br>2、用户的动态DNS记录：[***].username.d.corp.anjuke.com.用户可自行根据需要修改username及DNS记录所对应IP </td>
     <td height="244" align="center" valign="bottom"><table width="80%" border="0" cellspacing="0" cellpadding="0" >
     <form action="update.php" method="post">
       <tr>
-        <td width="50%" align="right"><font size="3"><strong>name:&nbsp;</strong></font></td>
-        <td><input type="text" name="name"/>.<?php echo $userinfo['username']; ?>.d.corp.anjuke.com</td>
+        <td width="30%" align="right"><font size="3"><strong>name:&nbsp;</strong></font></td>
+        <td><input type="text" name="name"/></td>
+      </tr>
+      <tr>
+        <td width="30%" align="right">&nbsp;新域名：</td>
+        <td>&nbsp;name.<?php echo $userinfo['username']; ?>.d.corp.anjuke.com</td>
       </tr>
       <tr>
         <td width="30%" align="center">&nbsp;</td>
@@ -54,9 +66,10 @@ body {
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td height="30" align="right"><input name="button" type="submit" class="btnQQ" id="button" value=" ADD " onClick="CheckForm();"></td>
+        <td height="30" align="right"><input name="button" type="submit" class="btnQQ" id="button" value="确    认" onClick="CheckForm();"></td></form>
+<td height="30" align="center"><input name="button1" type="submit" class="btnQQ" id="button1" value="关    闭" onClick="parent.disdivbox();"></td>
       </tr>
-  </form>
+  
       </font>
     </table></td>
   </tr>

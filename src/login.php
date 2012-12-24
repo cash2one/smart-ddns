@@ -1,7 +1,6 @@
 <?php
 require_once("config.php");
 require_once("function.php");
-
 $user = new User;
 if(isset($_REQUEST['action']) && $_REQUEST['action'] === "logout") {
     $user->logout(OAUTH_URL.'/logout.php?client_id='.OAUTH_ID.'&client_secret='.OAUTH_SECRET);

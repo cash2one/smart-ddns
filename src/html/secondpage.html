@@ -157,7 +157,9 @@ display:none;
 function del(newsid)
             {
                 if(confirm("确定删除么？"))
-                    gourl("");
+                  gourl("");
+                    
+             
 
             }
             
@@ -391,7 +393,7 @@ function disbg()
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
 <td width="50%" align="center" background="html/images/grid-blue-hd.gif" class="onlyr">NAME</td>
 
-<td width="50%" align="center" background="html/images/grid-blue-hd.gif" >IP</td>
+<td width="50%" align="center" background="html/images/grid-blue-hd.gif" >IP</td> 
 </table>
 </td>
         
@@ -404,17 +406,17 @@ function disbg()
         $id=$row['id']; ?>
         <tr  onMouseOver="mover(<?php echo $id; ?>);" onMouseOut="mout(<?php echo $id; ?>);">
         <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
-            <input type="checkbox" name="newsid" value="1" id="c<?php echo $id; ?>" />
+            <input type="checkbox" name="ipsid" value="<?php echo $id; ?>" id="c<?php echo $id; ?>" />
         </td>
-        <td align="center" class="topandright2" onClick="rowselect(1);">
+        <td align="center" class="topandright2" onClick="rowselect(<?php echo $id; ?>);">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
     <td width="50%" align="center" class="onlyright"><?php echo $row['name']; ?></td>
     <td width="50%" align="center"  class="onlyright"><?php echo $row['value']; ?></td>
 </table>
 </td>
-        <td align="center" class="topandright2" onClick="rowselect(1);" ><?php echo $row['owner']; ?></td>
-        <td align="center" class="onlytop" onClick="rowselect(1);"><img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span></td>
-        <td align="center" class="onlytop">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(1)"/><span style="cursor:pointer" onClick="del(1)"><a href="delete.php?id=<?php echo $id; ?>">DELETE</a></span></td>
+        <td align="center" class="topandright2" onClick="rowselect(<?php echo $id; ?>);" ><?php echo $row['owner']; ?></td>
+        <td align="center" class="onlytop" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span></td>
+        <td align="center" class="onlytop">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)"><a href="delete.php?id=<?php echo $id; ?>">DELETE</a></span></td>
       </tr>
       <?php } ?> 
 <!--
