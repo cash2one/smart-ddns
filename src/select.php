@@ -14,7 +14,7 @@
     function getAll($username)
     {
         require("conn.php");
-        $sql = "select * from $dns_table where owner='$username'";
+        $sql = "select * from $dns_table where owner='$username' and name!='@'";
         $result = mysql_query($sql,$con);
         mysql_close($con);
         return $result;
