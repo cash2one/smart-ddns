@@ -23,6 +23,8 @@ body {
 }
             
 </style>
+<script type="text/javascript" src="html/inc/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="html/inc/function.js"></script>
 </head>
 
 <body >
@@ -43,7 +45,7 @@ body {
     <form action="update.php" method="post">
      <tr>
         <td  align="right"><font size="3"><strong>NAME:&nbsp;</strong></font></td>
-        <td><input type="text" name="modify_name" value="<?php echo $name_view; ?>" /></td>
+        <td><input type="text" id="name" name="name" value="<?php echo $name_view; ?>" /></td>
       </tr>
       <tr>
         <td width="30%" align="center">&nbsp;</td>
@@ -51,7 +53,7 @@ body {
       </tr>
      <tr>
         <td  align="right"><font size="3"><strong>已绑定IP:&nbsp;</strong></font></td>
-        <td><input type="text" name="modify_ip" value="<?php echo $ip_view; ?>" /></td>
+        <td><input type="text" id="update_ip" name="update_ip" value="<?php echo $ip_view; ?>" /></td>
       </tr>
       <tr>
         <td width="30%" align="center">&nbsp;</td>
@@ -59,7 +61,7 @@ body {
       </tr>
       <tr>
         <td  align="right"><font size="3"><strong>当前IP:&nbsp;</strong></font></td>
-        <td><?php echo $_SERVER['REMOTE_ADDR']; ?><input type="hidden" name="modify_id" value="<?php echo $_GET['id']; ?>" /></td>
+        <td><?php echo $_SERVER['REMOTE_ADDR']; ?><input type="hidden" id="modify_id" name="modify_id" value="<?php echo $_GET['id']; ?>" /></td>
       </tr>
       <tr>
         <td width="30%" align="center">&nbsp;</td>
@@ -72,7 +74,7 @@ body {
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td height="30" align="right"><input name="button" type="submit" class="btnQQ" id="button" value="确    认" onClick="parent.disdivbox();" ></td>
+        <td height="30" align="right"><input name="button" type="button" class="btnQQ" id="button" value="确    认" onClick="editDns();" ></td>
     </form>
         <td align="center"><input name="button" type="submit" class="btnQQ" id="button" value="关    闭" onClick="parent.disdivbox();"></td>
       </tr>

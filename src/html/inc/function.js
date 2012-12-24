@@ -135,12 +135,26 @@ function showfuncbox(title,width,height,src)
 
 function editDns()
 {
+    id = $("#modify_id").val();
+    name = $("#name").val();
     update_ip = $("#update_ip").val();
-    $.post("update.php", {'update_ip':update_ip}, function(result) {
+    $.post("update.php", {'modify_id':id,'name':name,'update_ip':update_ip}, function(result) {
         if(result['status']) {
             randomnum = Math.random();
             parent.goiframes('secondpage.php?random=' + randomnum);
             parent.disdivbox()
+        } else {
+            alert(result['msg']);
+        }
+    }, "json");
+}
+
+function delDns(id)
+{
+    $.get("delete.php",{'id':id},function(result) {
+        if(result['status']) {
+            randomnum = Math.random();
+            parent.goiframes('secondpage.php?random=' + randomnum);
         } else {
             alert(result['msg']);
         }

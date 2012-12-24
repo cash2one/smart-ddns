@@ -2,8 +2,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>欢迎访问SMART_DDNS系统</title>
-<link href="inc/style.css" rel="stylesheet" type="text/css">
-<script language="javascript" src="inc/function.js" ></script>
+<link href="html/inc/style.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="html/inc/function.js" ></script>
+<script language="javascript" src="html/inc/jquery-1.8.3.min.js" ></script>
 <style type="text/css">
 body {
                 margin-left: 2px;
@@ -35,7 +36,7 @@ body {
     <form action="update.php" method="post">
       <tr>
         <td width="30%" align="right"><font size="3"><strong>name:&nbsp;</strong></font></td>
-        <td><input type="text" name="name"/></td>
+        <td><input type="text" id= "name" name="name"/></td>
       </tr>
       <tr>
         <td width="30%" align="right">&nbsp;新域名：</td>
@@ -43,7 +44,7 @@ body {
       </tr>
       <tr>
         <td width="30%" align="center">&nbsp;</td>
-        <td>&nbsp;</td>
+        <td>&nbsp;<input type="hidden" id="modify_id" value="" /></td>
       </tr>
      <tr>
         <td  align="right"><font size="3"><strong>当前IP:&nbsp;</strong></font></td>
@@ -55,7 +56,7 @@ body {
       </tr>
       <tr>
         <td align="right"><font size="3"><strong>UPDATE IP:&nbsp;</strong></font> </td>
-        <td><input type="text" name="add_ip" /></td>
+        <td><input type="text" id="update_ip" name="update_ip" /></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
@@ -66,7 +67,7 @@ body {
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td height="30" align="right"><input name="button" type="submit" class="btnQQ" id="button" value="确    认" onClick="history.go(0);"></td></form>
+        <td height="30" align="right"><input name="button" type="button" class="btnQQ" id="button" value="确    认" onClick="editDns();"></td></form>
 <td height="30" align="center"><input name="button1" type="submit" class="btnQQ" id="button1" value="关    闭" onClick="parent.disdivbox();"></td>
       </tr>
   

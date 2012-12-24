@@ -38,45 +38,46 @@
     {
         require("conn.php");
         $sql = "update $dns_table set name='$dnsname',value='$modify_ip' where id=$id";
-        mysql_query($sql,$con);
+        $result = mysql_query($sql,$con);
         mysql_close($con);
+        if($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     if(isset($_POST['modify_id']) && $_POST['modify_id'])
     {
         $id = $_POST['modify_id'];
-        if(isset($_POST['modify_name']) && $_POST['modify_name'])
+        if(isset($_POST['name']) && $_POST['name'])
         {
-            $dnsname = $_POST['modify_name'];
-            if(isset($_POST['modify_ip']) && $_POST['modify_ip'])
+            $dnsname = $_POST['name'];
+            if(isset($_POST['update_ip']) && $_POST['update_ip'])
             {
-                $post_ip = $_POST['modify_ip'];
-                if(isIP($post_ip))
-                    modifyRecord($id,$dnsname,$post_ip);
+                $post_ip = $_POST['update_ip'];
+                if(isIP($post_ip)) {
+                    $result['status'] = modifyRecord($id,$dnsname,$post_ip);
+                    echo json_encode($result);
+                } else {
+                    $result['status'] = false;
+                    if(! $result['status']) { $result['msg'] = "IP不符合规范"; }
+                    echo json_encode($result);
+                }
             }
-            else
-                modifyRecord($id,$dnsname,$_SERVER['REMOTE_ADDR']);
+            else {
+                $result['status'] = modifyRecord($id,$dnsname,$_SERVER['REMOTE_ADDR']);
+                echo json_encode($result);
+            }
         }
     }
     elseif(isset($_POST['name']) && $_POST['name'])
     {
         $dnsname = $_POST['name'];
-        if(isset($_POST['add_ip']) && $_POST['add_ip'])
-        {
-            $post_ip = $_POST['add_ip'];
-            if(isIP($post_ip))
-                addRecord($dnsname,$post_ip,$userinfo['username']);
-        }
-        else
-            addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
-    }
-    else 
-    {
-        $dnsname = '@';
         if(isset($_POST['update_ip']) && $_POST['update_ip']) {
             $post_ip = $_POST['update_ip'];
-            if(isIP($post_ip)) {
-                $result['status'] = addRecord($dnsname,$post_ip,$userinfo['username']);
+            if(isip($post_ip)) {
+                $result['status'] = addrecord($dnsname,$post_ip,$userinfo['username']);
                 echo json_encode($result);
             } else {
                 $result['status'] = false;
