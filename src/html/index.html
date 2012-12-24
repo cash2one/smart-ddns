@@ -64,7 +64,7 @@
                     <td height="30" colspan="2" valign="middle" background="html/images/por_bkg.gif" ><table border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td class="bfont">
-                                    欢迎登录 当前时间&nbsp;</td>
+                                    欢迎<?php echo $userinfo['chinese_name']; ?>&nbsp; 当前时间&nbsp;</td>
                                 <td  id="webjx"  class="bfont">&nbsp; </td>
                             </tr>
                         </table></td>
@@ -94,7 +94,7 @@
                                         </tr>
 
                                         <tr>
-                                            <td class="menu_item"><a style="cursor:pointer">退出系统</a></td>
+                                            <td class="menu_item"><a style="cursor:pointer" href="index.php?action=logout">退出系统</a></td>
                                         </tr>
                                     </table></td>
                             </tr>
