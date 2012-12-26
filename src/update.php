@@ -47,13 +47,13 @@
         }
     }
 
-    if(isset($_POST['modify_id']) && $_POST['modify_id'])
+    if(!empty($_POST['modify_id']))
     {
         $id = $_POST['modify_id'];
-        if(isset($_POST['name']) && $_POST['name'])
+        if(!empty($_POST['name']))
         {
             $dnsname = $_POST['name'];
-            if(isset($_POST['update_ip']) && $_POST['update_ip'])
+            if(!empty($_POST['update_ip']))
             {
                 $post_ip = $_POST['update_ip'];
                 if(isIP($post_ip)) {
@@ -71,10 +71,10 @@
             }
         }
     }
-    elseif(isset($_POST['name']) && $_POST['name'])
+    elseif(!empty($_POST['name']))
     {
         $dnsname = $_POST['name'];
-        if(isset($_POST['update_ip']) && $_POST['update_ip']) {
+        if(!empty($_POST['update_ip'])) {
             $post_ip = $_POST['update_ip'];
             if(isip($post_ip)) {
                 $result['status'] = addrecord($dnsname,$post_ip,$userinfo['username']);

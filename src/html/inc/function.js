@@ -133,20 +133,40 @@ function showfuncbox(title,width,height,src)
     funcbox.style.display="block";
 }
 
+function checkForm()
+{
+    if(form.name.value==""){
+        alert("NAME不能为空");
+        form.name.select();
+        return false;
+    }
+    else{
+        var reg = /^[a-zA-Z0-9-]+$/;
+        if(!reg.test(form.name.value)){
+            alert("非法字符！只能使用数字，字母和中横线。");
+            form.name.select();
+            return false;
+        }
+    }
+    return true;
+}
+
 function editDns()
 {
     id = $("#modify_id").val();
     name = $("#name").val();
     update_ip = $("#update_ip").val();
-    $.post("update.php", {'modify_id':id,'name':name,'update_ip':update_ip}, function(result) {
-        if(result['status']) {
-            randomnum = Math.random();
-            parent.goiframes('secondpage.php?random=' + randomnum);
-            parent.disdivbox()
-        } else {
-            alert(result['msg']);
-        }
-    }, "json");
+    if(checkForm()){
+        $.post("update.php", {'modify_id':id,'name':name,'update_ip':update_ip}, function(result) {
+            if(result['status']) {
+                randomnum = Math.random();
+                parent.goiframes('secondpage.php?random=' + randomnum);
+                parent.disdivbox()
+            } else {
+                alert(result['msg']);
+            }
+        }, "json");
+    }
 }
 
 function delDns(id)

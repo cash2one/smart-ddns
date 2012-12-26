@@ -19,6 +19,10 @@ define('OAUTH_SECRET', 'b627ada1');
 //Dir config
 define('HTML', 'pages/');
 
+//File config
+define('TEMPLATE','d.corp.anjuke.com.template');
+define('FILE','d.corp.anjuke.com');
+
 $zone = array (
     "dev.anjuke.com",
     "dev.aifang.com",

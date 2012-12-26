@@ -2,8 +2,8 @@
     require_once("select.php");
     function writeConfig()
     {
-        $template = 'd.corp.anjuke.com.template';
-        $file = 'd.corp.anjuke.com';
+        $template = TEMPLATE;
+        $file = FILE;
         if(!copy($template,$file)) {
             echo "Failed to copy $template.\n";
         }
