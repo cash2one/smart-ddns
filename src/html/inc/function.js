@@ -141,7 +141,7 @@ function checkForm()
         return false;
     }
     else{
-        var reg = /^[a-zA-Z0-9-]+$/;
+        var reg = /^[a-zA-Z0-9-@]+$/;
         if(!reg.test(form.name.value)){
             alert("非法字符！只能使用数字，字母和中横线。");
             form.name.select();
