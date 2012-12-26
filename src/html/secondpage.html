@@ -56,6 +56,13 @@ display:none;
 	border-right-color: #999;
 	border-bottom-color: #CCCCCC;
 }
+
+.onlyu1 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #ccc;
+}
+
 .onlyu {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -70,6 +77,13 @@ display:none;
         border-right-width: 1px;
 	border-right-style: solid;
 	border-right-color: #ccc;
+}
+.randu{
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+	border-right-style: solid;
+	border-right-color: #999;
+        border-bottom-color: #999;
 }
 .topandright {
 	border-top-width: 1px;
@@ -392,8 +406,8 @@ function disbg()
           <input type="checkbox" name="checkall" id="checkall" value="checkbox" onClick="checkselect();" />
         </label></td>
         <td width="57%" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
-<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
-<td width="50%" align="center" background="html/images/grid-blue-hd.gif" class="onlyr">NAME</td>
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0"  >
+<td width="50%" align="center" background="html/images/grid-blue-hd.gif" class="randu">NAME</td>
 
 <td width="50%" align="center" background="html/images/grid-blue-hd.gif" >IP</td> 
 </table>
@@ -412,7 +426,7 @@ function disbg()
         <td align="center" class="topandright1" onClick="rowselect(<?php echo $id; ?>);">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
 <td width="50%" align="center"  class="onlyright"><?php echo $row['name']; ?></td>
-<td width="50%" align="center"  class="onlyright"><?php echo $row['value']; ?></td>
+<td width="50%" align="center"  ><?php echo $row['value']; ?></td>
 
 </table></td>
         <td align="center" class="topandright1" onClick="rowselect(<?php echo $id; ?>);">&nbsp;<?php echo $row['owner']; ?> </td>
