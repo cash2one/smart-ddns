@@ -3,7 +3,7 @@
  * This is development enviroment config, if production enviroment config is
  * different, define it in the file below.
  */
-define('PRODUCTION_CONFIG', '/home/evans/ddns/config.php');
+define('PRODUCTION_CONFIG', '/home/www/webapps/ddns-conf/config.php');
 
 //DB config
 define('DB_HOST', '192.168.1.103');
