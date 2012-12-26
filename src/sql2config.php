@@ -1,9 +1,12 @@
 <?php
     require_once("select.php");
+
     function writeConfig()
     {
-        $template = TEMPLATE;
-        $file = FILE;
+        global $config;
+
+        $template = $config['TEMPLATE'];
+        $file = $config['FILE'];
         if(!copy($template,$file)) {
             echo "Failed to copy $template.\n";
         }
@@ -25,8 +28,10 @@
 
     function reloadConfig()
     {
-        exec(CONFIGTEST,$output,$rc);
+        global $config;
+
+        exec($config['CONFIGTEST'], $output, $rc);
         if(!$rc)
-            exec(RELOAD);
+            exec($config['RELOAD']);
     }
 ?>

@@ -3,7 +3,7 @@ require_once("config.php");
 require_once("function.php");
 $user = new User;
 if(isset($_REQUEST['action']) && $_REQUEST['action'] === "logout") {
-    $user->logout(OAUTH_URL.'/logout.php?client_id='.OAUTH_ID.'&client_secret='.OAUTH_SECRET);
+    $user->logout($config['OAUTH_URL'].'/logout.php?client_id='.$config['OAUTH_ID'].'&client_secret='.$config['OAUTH_SECRET']);
 } else {
     $userinfo = $user->check_login();
 
@@ -31,7 +31,7 @@ class User {
         }
 
         if($this->access_token) {
-            $info = $this->get_info_from_ldap($this->access_token, OAUTH_URL);
+            $info = $this->get_info_from_ldap($this->access_token, $config['OAUTH_URL']);
 
             if($info) {
                 $encrypted = encrypt($info, $this->encrypt_key);
@@ -40,7 +40,7 @@ class User {
             }
         }
 
-        $this->login_with_oauthcurl(OAUTH_ID, OAUTH_SECRET, OAUTH_URL);
+        $this->login_with_oauthcurl($config['OAUTH_ID'], $config['OAUTH_SECRET'], $config['OAUTH_URL']);
     }
 
     public function logout($auth_logout_url) {
