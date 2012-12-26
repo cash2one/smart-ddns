@@ -70,6 +70,8 @@
                 echo json_encode($result);
             }
         }
+        writeConfig();
+        reloadConfig();
     }
     elseif(!empty($_POST['name']))
     {
@@ -88,7 +90,7 @@
             $result['status'] = addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
             echo json_encode($result);
         }
+        writeConfig();
+        reloadConfig();
     }
-    writeConfig();
-    reloadConfig();
 ?>

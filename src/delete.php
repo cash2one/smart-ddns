@@ -15,16 +15,14 @@
     }
 
     $username = $userinfo['username'];
-    if(isset($_GET['id']) && $_GET['id'] && filter_var($_GET['id'],FILTER_VALIDATE_INT))
+    if(!empty($_GET['id']) && filter_var($_GET['id'],FILTER_VALIDATE_INT))
     {
         $id = $_GET['id'];
         $result['status'] = deleteRecord($id,$username);
         if(!$result['status'])
             $result['msg'] = "删除失败";
         echo json_encode($result);
+        writeConfig();
+        reloadConfig();
     }
-    else
-        return false;
-    writeConfig();
-    reloadConfig();
 ?>
