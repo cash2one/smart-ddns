@@ -3,7 +3,7 @@ liuhua.lvandu    A    1.1.1.2
 duyifan-ivan.lvandu    A    1.1.1.1
 lvandu    A    127.0.0.1
 gywang    A    192.168.200.1
-yunlongxiao    A    192.168.220.84
+yunlongxiao    A    127.0.0.1
 liuhuajian.lvandu    A    1.1.1.1
 smart.lvandu    A    1.1.1.1
 asdasd.gywang    A    127.0.0.1
@@ -20,4 +20,7 @@ duyifana.lvandu    A    1.1.1.1
 config.lvandu    A    127.0.0.1
 dufiasdfiusduf.lvandu    A    1.1.1.1
 tttttt.yunlongxiao    A    127.0.0.1
-*.yunlongxiao    A    127.0.0.1
+eeee.gywang    A    3.2.23.3
+*.yunlongxiao    A    192.168.220.214
+@@@.yunlongxiao    A    192.168.220.214
+duyifan.    A    1.1.1.1

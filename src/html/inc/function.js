@@ -141,8 +141,8 @@ function checkForm()
         return false;
     }
     else{
-        var reg = /^[a-zA-Z0-9-@]+$/;
-        var reg2 = /^\*$/;
+        var reg = /^[a-zA-Z0-9-]+$/;
+        var reg2 = /^[@\*]?$/;
         if(!reg.test(form.name.value) && !reg2.test(form.name.value)){
             alert("非法字符！只能使用数字，字母，中横线或单独一个星号");
             form.name.select();
