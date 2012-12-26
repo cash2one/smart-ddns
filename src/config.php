@@ -23,6 +23,10 @@ define('HTML', 'pages/');
 define('TEMPLATE','d.corp.anjuke.com.template');
 define('FILE','d.corp.anjuke.com');
 
+//shell config
+define('CONFIGTEST','named-checkzone '.FILE);
+define('RELOAD',' ');
+
 $zone = array (
     "dev.anjuke.com",
     "dev.aifang.com",

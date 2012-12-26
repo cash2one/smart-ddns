@@ -90,4 +90,5 @@
         }
     }
     writeConfig();
+    reloadConfig();
 ?>

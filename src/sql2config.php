@@ -22,4 +22,11 @@
         else
             echo "Failed to open file.";
     }
+
+    function reloadConfig()
+    {
+        system(CONFIGTEST);
+        if(!system('$?'))
+            system(RELOAD);
+    }
 ?>

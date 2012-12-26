@@ -26,4 +26,5 @@
     else
         return false;
     writeConfig();
+    reloadConfig();
 ?>
