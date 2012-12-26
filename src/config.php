@@ -24,8 +24,8 @@ define('TEMPLATE','d.corp.anjuke.com.template');
 define('FILE','d.corp.anjuke.com');
 
 //shell config
-define('CONFIGTEST','named-checkzone '.FILE);
-define('RELOAD',' ');
+define('CONFIGTEST','ls');
+define('RELOAD','echo "ok">/tmp/reload_test');
 
 $zone = array (
     "dev.anjuke.com",

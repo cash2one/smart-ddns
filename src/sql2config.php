@@ -25,8 +25,8 @@
 
     function reloadConfig()
     {
-        system(CONFIGTEST);
-        if(!system('$?'))
-            system(RELOAD);
+        exec(CONFIGTEST,$output,$rc);
+        if(!$rc)
+            exec(RELOAD);
     }
 ?>
