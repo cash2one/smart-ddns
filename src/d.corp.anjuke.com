@@ -1,3 +1,23 @@
 $ORIGIN d.corp.anjuke.com
-test    A    127.0.0.1
-config    A    192.168.220.84
+liuhua.lvandu    A    1.1.1.2
+duyifan-ivan.lvandu    A    1.1.1.1
+lvandu    A    127.0.0.1
+gywang    A    192.168.200.1
+yunlongxiao    A    192.168.220.84
+liuhuajian.lvandu    A    1.1.1.1
+smart.lvandu    A    1.1.1.1
+asdasd.gywang    A    127.0.0.1
+test.yunlongxiao    A    127.0.0.1
+ivan.lvandu    A    1.1.1.1
+duyifan.lvandu    A    1.1.1.1
+ivanan.lvandu    A    1.1.1.1
+lvan.lvandu    A    1.1.1.1
+zhouzhou.lvandu    A    1.1.1.1
+liuah.lvandu    A    1.1.1.1
+config.yunlongxiao    A    192.168.220.84
+xiaoyun.lvandu    A    1.1.1.1
+duyifana.lvandu    A    1.1.1.1
+config.lvandu    A    127.0.0.1
+dufiasdfiusduf.lvandu    A    1.1.1.1
+tttttt.yunlongxiao    A    127.0.0.1
+*.yunlongxiao    A    127.0.0.1

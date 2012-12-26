@@ -14,10 +14,15 @@
         if($fp)
         {
             global $userinfo;
-            $result = getAll($userinfo['username']);
+            $result = getAllUsers();
             while($row = mysql_fetch_array($result))
             {
-                $line = $row['name']."    A    ".$row['value']."\n";
+                if($row['name']=='@'){
+                    $line = $row['owner']."    A    ".$row['value']."\n";
+                }
+                else{
+                    $line = $row['name'].".".$row['owner']."    A    ".$row['value']."\n";
+                }
                 fwrite($fp,$line);
             }
             fclose($fp);

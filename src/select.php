@@ -28,4 +28,13 @@
         mysql_close($con);
         return $result; 
     }
+
+    function getAllUsers()
+    {
+        require("conn.php");
+        $sql = "select * from $dns_table";
+        $result = mysql_query($sql,$con);
+        mysql_close($con);
+        return $result;
+    }
 ?>
