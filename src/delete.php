@@ -21,9 +21,7 @@
         $result['status'] = deleteRecord($id,$username);
         if(!$result['status'])
             $result['msg'] = "删除失败";
-        echo json_encode($result);
-        writeConfig();
-        reloadConfig();
+        bindConfig();
     }
     else 
         echo "error";

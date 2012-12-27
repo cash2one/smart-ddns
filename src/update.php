@@ -52,21 +52,6 @@
         }
     }
 
-    function bindConfig()
-    {
-        global $result;
-        if(!$result['status']){
-            $result['msg'] = "Failed to modify database";
-        } elseif(!writeConfig()){
-            $result['status'] = false;
-            $result['msg'] = "Failed to write config";
-        } elseif(!reloadConfig()){
-            $result['status'] = false;
-            $result['msg'] = "Failed to reload config";
-        }
-        echo json_encode($result);
-    }
-
     
     if(!empty($_POST['name']))
     {

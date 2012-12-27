@@ -1,0 +1,21 @@
+$ORIGIN d.corp.anjuke.com
+liuhua.lvandu    A    1.1.1.2
+duyifan-ivan.lvandu    A    1.1.1.1
+lvandu    A    127.0.0.1
+gywang    A    192.168.200.1
+yunlongxiao    A    127.0.0.1
+liuhuajian.lvandu    A    1.1.1.1
+smart.lvandu    A    1.1.1.1
+windows.gywang    A    192.168.1.22
+old.gywang    A    192.168.1.189
+ivan.lvandu    A    1.1.1.1
+duyifan.lvandu    A    1.1.1.1
+ivanan.lvandu    A    1.1.1.1
+lvan.lvandu    A    1.1.1.1
+zhouzhou.lvandu    A    1.1.1.1
+liuah.lvandu    A    1.1.1.1
+d.yunlongxiao    A    127.0.0.1
+xiaoyun.lvandu    A    1.1.1.1
+duyifana.lvandu    A    1.1.1.1
+config.lvandu    A    127.0.0.1
+dufiasdfiusduf.lvandu    A    1.1.1.1
