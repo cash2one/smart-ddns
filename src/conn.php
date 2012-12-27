@@ -3,7 +3,7 @@
     global $config;
 
     $dns_table = "dynamic_record";
-    $key_table = "";
+    $key_table = "user";
     $con = mysql_connect($config['DB_HOST'], $config['DB_USER'], $config['DB_PASS']);
     if(!$con)
     {
