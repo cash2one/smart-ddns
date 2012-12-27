@@ -133,7 +133,7 @@ function showfuncbox(title,width,height,src)
     funcbox.style.display="block";
 }
 
-function checkForm()
+function checkName()
 {
     if(form.name.value==""){
         alert("NAME不能为空");
@@ -152,12 +152,32 @@ function checkForm()
     return true;
 }
 
+function checkIP()
+{
+    var reg = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/;
+    var flag = true;
+    if(reg.test(form.update_ip.value)) {
+        if(RegExp.$1<0 || RegExp.$1>255) flag=false;
+        if(RegExp.$2<0 || RegExp.$2>255) flag=false;
+        if(RegExp.$3<0 || RegExp.$3>255) flag=false;
+        if(RegExp.$4<0 || RegExp.$4>255) flag=false;
+    }
+    else if(form.update_ip.value){
+        flag=false;
+    }
+    if(!flag) {
+        alert("IP格式不对");
+        form.update_ip.select();
+    }
+    return flag;
+}
+
 function editDns()
 {
     id = $("#modify_id").val();
     name = $("#name").val();
     update_ip = $("#update_ip").val();
-    if(checkForm()){
+    if(checkName()&&checkIP()){
         $.post("update.php", {'modify_id':id,'name':name,'update_ip':update_ip}, function(result) {
             if(result['status']) {
                 randomnum = Math.random();
