@@ -15,6 +15,12 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] === "logout") {
 
 class User {
     public function __construct() {
+        global $config;
+
+        $this->OAUTH_ID     = $config['OAUTH_ID'];
+        $this->OAUTH_SECRET = $config['OAUTH_SECRET'];
+        $this->OAUTH_URL    = $config['OAUTH_URL'];
+
         $this->ddns_auth    = isset($_COOKIE['ddns_auth']) ? $_COOKIE['ddns_auth'] : false;
         $this->access_token = isset($_REQUEST['access_token']) ? $_REQUEST['access_token'] : false;
         $this->encrypt_key  = date("YW");
@@ -31,7 +37,7 @@ class User {
         }
 
         if($this->access_token) {
-            $info = $this->get_info_from_ldap($this->access_token, $config['OAUTH_URL']);
+            $info = $this->get_info_from_ldap($this->access_token, $this->OAUTH_URL);
 
             if($info) {
                 $encrypted = encrypt($info, $this->encrypt_key);
@@ -40,7 +46,7 @@ class User {
             }
         }
 
-        $this->login_with_oauthcurl($config['OAUTH_ID'], $config['OAUTH_SECRET'], $config['OAUTH_URL']);
+        $this->login_with_oauthcurl($this->OAUTH_ID, $this->OAUTH_SECRET, $this->OAUTH_URL);
     }
 
     public function logout($auth_logout_url) {
