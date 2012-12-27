@@ -25,4 +25,6 @@
         writeConfig();
         reloadConfig();
     }
+    else 
+        echo "error";
 ?>

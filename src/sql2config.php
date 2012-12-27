@@ -8,7 +8,7 @@
         $template = $config['TEMPLATE'];
         $file = $config['FILE'];
         if(!copy($template,$file)) {
-            echo "Failed to copy $template.\n";
+            return false;
         }
         $fp = fopen("$file","a+");
         if($fp)
@@ -23,12 +23,15 @@
                 else{
                     $line = $row['name'].".".$row['owner']."    A    ".$row['value']."\n";
                 }
-                fwrite($fp,$line);
+                if(!fwrite($fp,$line))
+                    return false;
             }
             fclose($fp);
         }
-        else
-            echo "Failed to open file.";
+        else{
+            return false;
+        }
+        return true;
     }
 
     function reloadConfig()
@@ -38,5 +41,8 @@
         exec($config['CONFIGTEST'], $output, $rc);
         if(!$rc)
             exec($config['RELOAD']);
+        else
+            return false;
+        return true;
     }
 ?>

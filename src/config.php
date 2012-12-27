@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $config = array (
     /*
      * This is development enviroment config, if production enviroment config is

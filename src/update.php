@@ -14,6 +14,11 @@
         return ereg("^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$",$tmp_ip);
     }
 
+    function isUrl($name)
+    {
+        return ereg("^([0-9a-zA-Z]+)|([@\*]?)$",$name);
+    }
+
     function addRecord($dnsname,$update_ip,$username)
     {
         require("conn.php");
@@ -47,50 +52,49 @@
         }
     }
 
-    if(!empty($_POST['modify_id']))
+    function bindConfig()
     {
-        $id = $_POST['modify_id'];
-        if(!empty($_POST['name']))
-        {
-            $dnsname = $_POST['name'];
-            if(!empty($_POST['update_ip']))
-            {
-                $post_ip = $_POST['update_ip'];
-                if(isIP($post_ip)) {
-                    $result['status'] = modifyRecord($id,$dnsname,$post_ip);
-                    echo json_encode($result);
-                } else {
-                    $result['status'] = false;
-                    if(! $result['status']) { $result['msg'] = "IP不符合规范"; }
-                    echo json_encode($result);
-                }
-            }
-            else {
-                $result['status'] = modifyRecord($id,$dnsname,$_SERVER['REMOTE_ADDR']);
-                echo json_encode($result);
-            }
+        global $result;
+        if(!$result['status']){
+            $result['msg'] = "Failed to modify database";
+        } elseif(!writeConfig()){
+            $result['status'] = false;
+            $result['msg'] = "Failed to write config";
+        } elseif(!reloadConfig()){
+            $result['status'] = false;
+            $result['msg'] = "Failed to reload config";
         }
-        writeConfig();
-        reloadConfig();
+        echo json_encode($result);
     }
-    elseif(!empty($_POST['name']))
+
+    
+    if(!empty($_POST['name']))
     {
         $dnsname = $_POST['name'];
-        if(!empty($_POST['update_ip'])) {
-            $post_ip = $_POST['update_ip'];
-            if(isip($post_ip)) {
-                $result['status'] = addrecord($dnsname,$post_ip,$userinfo['username']);
-                echo json_encode($result);
+        if(!empty($_POST['update_ip']))
+        {
+            if(isIP($_POST['update_ip'])) {
+                $post_ip = $_POST['update_ip'];
             } else {
                 $result['status'] = false;
                 if(! $result['status']) { $result['msg'] = "IP不符合规范"; }
                 echo json_encode($result);
+                exit();
             }
-        } else {
-            $result['status'] = addRecord($dnsname,$_SERVER['REMOTE_ADDR'],$userinfo['username']);
-            echo json_encode($result);
         }
-        writeConfig();
-        reloadConfig();
+        else {
+            $post_ip = $_SERVER['REMOTE_ADDR'];
+        }
     }
+    
+    if(!empty($_POST['modify_id']))
+    {
+        $id = $_POST['modify_id'];
+        $result['status'] = modifyRecord($id,$dnsname,$post_ip);
+    }
+    else {
+        $result['status'] = addrecord($dnsname,$post_ip,$userinfo['username']);
+    }
+
+    bindConfig();
 ?>
