@@ -380,7 +380,7 @@ function disbg()
         <td colspan="5"><table width="100%" border="0" cellpadding="0" cellspacing="0">
           <tr width="100%">
             <td width="66%" height="25" background="html/images/backt.jpg">&nbsp;</td>
-            <td width="34%" align="right" background="html/images/backt.jpg"><img src="html/images/done.gif" width="20" height="16" onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage.php');" style="cursor:pointer;"/><span onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage.php');" style="cursor:pointer;">ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+            <td width="34%" align="right" background="html/images/backt.jpg"><img src="html/images/done.gif" width="20" height="16" onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage.php');" style="cursor:pointer;"/><span onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage.php');" style="cursor:pointer;">ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="html/images/schoollist.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick=""/><span style="cursor:pointer" onClick="">UPDATE KEY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
           </tr>
         </table></td>
@@ -399,7 +399,7 @@ function disbg()
         
         <td width="13%" align="center"  class="topandright">&nbsp;</td>
         <td width="12%" align="center"  class="onlytop">更新IP：</td>
-        <td width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');">MODIFY</span></td>
+        <td width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick=""/><span style="cursor:pointer" onClick="">AUTO-BIND</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
       </tr>
 <tr>
         <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright" id="3"><label>
@@ -431,8 +431,8 @@ function disbg()
 </table></td>
         <td align="center" class="topandright1" onClick="rowselect(<?php echo $id; ?>);">&nbsp;<?php echo $row['owner']; ?> </td>
 
-         <td align="center" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span></td>
-        <td align="left" class="onlytop1">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('UPDATE DNS',650,400,'html/updatepage.html');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('UPDATE DNS',650,400,'html/updatepage.html');">UPDATE</span>
+         <td align="right" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="left" class="onlytop1">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick=""/><span style="cursor:pointer" onClick="">AUTO-BIND</span>
 
         
       </tr>
