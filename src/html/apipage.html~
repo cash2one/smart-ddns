@@ -9,7 +9,7 @@ body {
                 margin-right: 2px;
                 margin-bottom: 0px;
                 font-family: "宋体";
-                font-size: 20px;
+                font-size: 12px;
 				background-image:url(images/welbg.jpg);
 				background-repeat: repeat-x;
             }

@@ -1,4 +1,6 @@
 <?php
-
+require_once("login.php");
+require_once("genapi.php");
+php $api[0]=genapi(); 
 include("html/apipage.html");
 ?>
