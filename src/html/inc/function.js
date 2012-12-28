@@ -202,6 +202,17 @@ function delDns(id)
     }, "json");
 }
 
+function updatekey()
+{
+    $.getJSON("updatekey.php",function(result){
+        if(result['status']) {
+            alert("更新成功");
+            parent.goiframes('secondpage.php?random=' + Math.random());
+        } else {
+            alert(result['msg']);
+        }
+    });
+}
 function disdivbox()
 {
     disbg();

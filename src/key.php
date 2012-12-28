@@ -12,15 +12,20 @@ function genKey($len)
 function setKey($username,$key)
 {
     require("conn.php");
-    $sql = "insert $key_table (username,key) values('$username','$key') on duplicate key update key='$key'";
-    mysql_query($sql,$con);
+    $sql = "insert into $key_table(username,`key`) values('$username','$key') on duplicate key update `key`='$key'";
+    $result = mysql_query($sql,$con);
     mysql_close($con);
+    if($result) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function getKey($username)
 {
     require("conn.php");
-    $sql = "select key from $key_table where username='$username'";
+    $sql = "select * from $key_table where username='$username'";
     $result = mysql_query($sql,$con);
     mysql_close($con);
     if($result) {
