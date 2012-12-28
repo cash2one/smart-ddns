@@ -398,9 +398,8 @@ function disbg()
         
         <td width="13%" align="center"  class="onlytop">&nbsp;更新IP：</td>
         <td width="12%" align="center"  class="onlytop">&nbsp;</td>
-        <?php $api[0]=genapi(); ?>
         <td width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="
-    html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',600,400,'apipage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',600,400,'apipage.php');">AUTO-BIND</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('API INFORMATION',800,200,'apipage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('API INFORMATION',800,200,'apipage.php');">AUTO-BIND</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
       </tr>
 <tr>
         <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright" id="3"><label>
@@ -419,7 +418,7 @@ function disbg()
         <td width="17%" align="left" background="html/images/grid-blue-hd.gif" class="onlytop">MANAGE</td>
       </tr>     
 <?php $result=getAll($userinfo['username']); while($row = mysql_fetch_array($result)) { 
-        $id=$row['id']; $api[$id] = genapi($id); ?>
+        $id=$row['id'];  ?>
 <tr style="background:#E8EFF7;" id="<?php echo $id; ?>" onMouseOver="mover(<?php echo $id; ?>);" onMouseOut="mout(<?php echo $id; ?>);">
         <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
           <input type="checkbox" name="ipsid" value="<?php echo $id; ?>"  id="c<?php echo $id; ?>"/>
@@ -433,7 +432,7 @@ function disbg()
         <td align="center" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);">&nbsp; </td>
 
          <td align="right" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td align="left" class="onlytop1">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick=""/><span style="cursor:pointer" onClick="alert('<?php echo $api[$id]; ?>');">AUTO-BIND</span>
+         <td align="left" class="onlytop1">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');">AUTO-BIND</span>
 
         
       </tr>

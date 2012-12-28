@@ -1,5 +1,6 @@
 <?php
 require("key.php");
+require_once("select.php");
 function genapi($id=null) {
     global $userinfo;
     $username = $userinfo['username'];

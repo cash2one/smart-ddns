@@ -1,5 +1,4 @@
 <?php
-require_once("login.php");
 require("check.php");
 require("editrecord.php");
 require("key.php");

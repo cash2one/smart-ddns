@@ -398,7 +398,6 @@ function disbg()
         
         <td width="13%" align="center"  class="onlytop">&nbsp;更新IP：</td>
         <td width="12%" align="center"  class="onlytop">&nbsp;</td>
-        <?php $api[0]=genapi(); ?>
         <td width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="
     html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',600,400,'apipage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',600,400,'apipage.php');">AUTO-BIND</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
       </tr>
