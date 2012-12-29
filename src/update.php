@@ -1,5 +1,6 @@
 <?php
     require_once("login.php");
+    require("select.php");
     require("sql2config.php");
     require("check.php");
     require("editrecord.php");
@@ -7,7 +8,19 @@
     if(!empty($_POST['name']))
     {
         if(isName($_POST['name'])) {
-            $dnsname = $_POST['name'];
+            if(empty($_POST['modify_id'])) {
+                $id = 0;
+            } else {
+                $id = $_POST['modify_id'];
+            }
+           if(($_POST['name']!='@' || $id!=0) && getCount($userinfo['username'],$_POST['name'],$id)>0) { 
+               $result['status'] = false;
+               $result['msg'] = "NAME已被使用";
+               echo json_encode($result);
+               exit();
+           } else {
+               $dnsname = $_POST['name'];
+           }
         } else {
             $result['status'] = false;
             $result['msg'] = "NAME只能为数字，字母，中横线或单独一个星号";
@@ -42,7 +55,7 @@
         $result['status'] = modifyRecord($id,$dnsname,$post_ip);
     }
     else {
-        $result['status'] = addrecord($dnsname,$post_ip,$userinfo['username']);
+        $result['status'] = addRecord($dnsname,$post_ip,$userinfo['username']);
     }
 
     bindConfig();

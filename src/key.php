@@ -28,8 +28,8 @@ function getKey($username)
     $sql = "select * from $key_table where username='$username'";
     $result = mysql_query($sql,$con);
     mysql_close($con);
-    if($result) {
-        $row = mysql_fetch_array($result);
+    $row = mysql_fetch_array($result);
+    if($row){
         return $row['key'];
     } else {
         return false;

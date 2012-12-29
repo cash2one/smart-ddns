@@ -17,7 +17,7 @@ function genapi($id=null) {
         $key = genKey(10);
         setKey($username,$key); 
     }
-    $api = "ddns.corp.anjuke.com/acceptapi.php?dnsname=".$name."&key=".$key."&username=".$username;
+    $api = "http://ddns.corp.anjuke.com/acceptapi.php?dnsname=".$name."&key=".$key."&username=".$username;
     return $api;
 }
 ?>
