@@ -6,7 +6,7 @@ gywang    A    192.168.200.1
 liuhuajian.lvandu    A    1.1.1.1
 smart.lvandu    A    1.1.1.1
 windows.gywang    A    192.168.1.22
-old.gywang    A    192.168.1.188
+old.gywang    A    127.0.0.1
 ivan.lvandu    A    1.1.1.1
 duyifan.lvandu    A    1.1.1.1
 ivanan.lvandu    A    1.1.1.1
@@ -18,4 +18,4 @@ duyifana.lvandu    A    1.1.1.1
 config.lvandu    A    127.0.0.1
 dufiasdfiusduf.lvandu    A    1.1.1.1
 liuwen.lvandu    A    1.1.1.1
-test.yunlongxiao    A    1.1.1.1
+test.yunlongxiao    A    127.0.0.1
