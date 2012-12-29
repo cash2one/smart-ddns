@@ -396,9 +396,7 @@ function disbg()
 </table>
 </td>
         
-        <td width="13%" align="center"  class="onlytop">&nbsp;更新IP：</td>
-        <td width="12%" align="center"  class="onlytop">&nbsp;</td>
-        <td width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="
+        <td colspan=2 width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="
     html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('API INFORMATION',800,200,'apipage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('API INFORMATION',800,200,'apipage.php');">AUTO-BIND</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
       </tr>
 <tr>
@@ -414,7 +412,6 @@ function disbg()
 </td>
         
         <td width="13%" align="center" background="html/images/grid-blue-hd.gif" class="onlytop">&nbsp;</td>
-        <td width="10%" align="center" background="html/images/grid-blue-hd.gif" class="onlytop">&nbsp;</td>
         <td width="17%" align="left" background="html/images/grid-blue-hd.gif" class="onlytop">MANAGE</td>
       </tr>     
 <?php $result=getAll($userinfo['username']); while($row = mysql_fetch_array($result)) { 
@@ -429,7 +426,6 @@ function disbg()
 <td width="50%" align="center"  ><?php echo $row['value']; ?></td>
 
 </table></td>
-        <td align="center" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);">&nbsp; </td>
 
          <td align="right" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td align="left" class="onlytop1">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');">AUTO-BIND</span>

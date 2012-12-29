@@ -8,9 +8,9 @@ $config = array (
     'PRODUCTION_CONFIG' => '/home/www/webapps/ddns-conf/config.php',
 
     //DB config
-     'db_host' => '192.168.1.103',
-     'db_user' => 'caixh',
-     'db_pass' => 'caixh123',
+     'DB_HOST' => '192.168.1.103',
+     'DB_USER' => 'caixh',
+     'DB_PASS' => 'caixh123',
      'DB_NAME' => 'ddns',
      
     //OAuth config
