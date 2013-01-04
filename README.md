@@ -81,4 +81,33 @@ __xxx.${username}.d.corp.anjuke.com：__用户可以增删改<br/>
 
 ##第二期  Dev域名
 
-to be continued...
+###主要功能点
+
+* dev域名的绑定
+* api可以修改IP，以及安全加固
+* 操作log的记录
+* help页面，也即宣传页面
+
+###数据表
+
+    CREATE TABLE `log` (
+      `id` int(11) NOT NULL auto_increment,
+      `act_time` datetime NOT NULL COMMENT '操作时间',
+      `user` varchar(64) NOT NULL COMMENT '操作者',
+      `content` text NOT NULL COMMENT '操作内容',
+      PRIMARY KEY  (`id`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=utf8
+
+###技术实现
+
+####dev域名的绑定
+
+在动态DNS的界面会有一个操作按钮BindDevDns，将所有某个具体用户的所有Dev域名包括泛解析CNAME到当前的某条动态解析，同样生成配置文件、重载。
+
+####操作日志的记录
+
+如果用户属于配置文件里面的管理员，菜单项会有日志一项，对象的每个涉及数据库的操作，都会记录到日志，日志有分页和查找功能。
+
+####api安全
+
+签名，非对称加密
