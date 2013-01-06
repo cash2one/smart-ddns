@@ -169,7 +169,15 @@ display:none;
  <script type="text/javascript" src="html/inc/jquery-1.8.3.min.js"></script>
 
 <script language="javascript">
-    
+
+function bind(id)
+{
+	if(confirm("是将DEV域名绑定到这个动态域名上面么？"))
+		{
+		bindDev(id);
+		}
+	}
+
 function del(newsid)
             {
                 if(confirm("确定删除么？")) {
@@ -427,7 +435,7 @@ function disbg()
 
 </table></td>
 
-         <td align="right" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td align="right" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);"><img src="html/images/newico.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="bind(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="bind(<?php echo $id; ?>)">BindDevDNS</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
          <td align="left" class="onlytop1">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');">AUTO-BIND</span>
 
         

@@ -8,8 +8,11 @@ function genapi($id=null) {
         $result = getOne($id,$username);
         $row = mysql_fetch_array($result);
         $name = $row['name'];
+        $ip=$_SERVER['REMOTE_ADDR'];
     } else {
         $name = '@';
+        $ip=$_SERVER['REMOTE_ADDR'];
+        
     }
 
     $key = getKey($username);
@@ -17,7 +20,7 @@ function genapi($id=null) {
         $key = genKey(10);
         setKey($username,$key); 
     }
-    $api = "http://ddns.corp.anjuke.com/acceptapi.php?dnsname=".$name."&key=".$key."&username=".$username;
+    $api = "http://ddns.corp.anjuke.com/acceptapi.php?dnsname=".$name."&key=".$key."&username=".$username."&ip=";
     return $api;
 }
 ?>

@@ -10,10 +10,10 @@ function addRecord($dnsname,$update_ip,$username)
         $sql = "insert into $dns_table (name,value,owner) values ('$dnsname','$update_ip','$username')";
     }
 
-    $result2 = mysql_query($sql,$con);
+    $result2 = mysql_query($sql,$con); 
     mysql_close($con);
 
-    if($result2) {
+    if($result2) {                                         
         return true;
     } else {
         return false;

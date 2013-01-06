@@ -202,6 +202,20 @@ function delDns(id)
     }, "json");
 }
 
+function bindDev(id)
+{
+$.get("bindDev.php",{'id':id},function(result){
+	if(result['status']){
+		randomnum=Math.random();
+		parent.goiframes("secondpage.php?random="+randomnum);
+	}
+	else{
+		alert(result['msg']);
+	    }
+   },"json");	
+}
+
+
 function updatekey()
 {
     $.getJSON("updatekey.php",function(result){
