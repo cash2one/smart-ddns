@@ -1,4 +1,11 @@
-
+<?php global $userinfo;
+$username=$userinfo['username'];
+$result=getBind();
+while($row=mysql_fetch_array($result))
+{
+$name=$row['name'];
+}
+ ?>
 <html>
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -6,10 +13,7 @@
         <meta http-equiv="Cache-Control" CONTENT="no-cache">
         <meta http-equiv="Expires" CONTENT="0">
 
-<title>JSP Page</title>
-        
-        
-
+<title>JSP Page</title>            
  <style type="text/css">
  td{
                 margin-left: 0px;
@@ -59,6 +63,13 @@ display:none;
 	border-right-color: #999;
 	border-bottom-color: #CCCCCC;
 }
+
+.onlyu1 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #ccc;
+}
+
 .onlyu {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -74,6 +85,23 @@ display:none;
 	border-right-style: solid;
 	border-right-color: #ccc;
 }
+.randu{
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+	border-right-style: solid;
+	border-right-color: #999;
+        border-bottom-color: #999;
+}
+
+.onlybot
+{
+
+        border-bottom-width: 1px;
+	
+	
+        border-bottom-color: #999;
+}
+
 .topandright {
 	border-top-width: 1px;
 	border-right-width: 1px;
@@ -129,7 +157,7 @@ display:none;
 	color: #2E4B85;
 	height: 27px;
 	padding-left:40px;
-	padding-top: 1px;
+	padding-top: 1px;<?php global $userinfo; ?>
 	background-image: url(html/images/menu_toptit.jpg);
 	background-repeat: repeat-x;
 }
@@ -139,8 +167,10 @@ display:none;
 	background-image: url(html/images/menu_item_bg.jpg);
 	background-repeat: no-repeat;
 	background-color:#FFFFFF;
-	background-position: center center;
-	padding-top:3px;
+	background-position: center centere
+	padding-toe:3px;
+    header("Location: /");
+    header("Location: /");
 	padding-left: 40px;
 	height: 28px;
 
@@ -152,15 +182,25 @@ display:none;
 <script type="text/javascript" src="html/inc/build/dragdrop/dragdrop-debug.js" ></script>
  <script type="text/javascript" src="html/inc/build/animation/animation-min.js"></script>
 <script language="javascript" src="html/inc/function.js" ></script>
- <script language="javascript" src="html/inc/time.js" ></script>
   <link href="html/inc/style.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript" src="html/inc/jquery-1.8.3.min.js"></script>
 
 <script language="javascript">
-    
+
+function bind(id)
+{
+	if(confirm("是将DEV域名绑定到这个动态域名上面么？"))
+		{
+		bindDev(id);
+		}
+	}
+
 function del(newsid)
             {
-                if(confirm("确定删除么？"))
-                    gourl("");
+                if(confirm("确定删除么？")) {
+                    delDns(newsid);
+              } 
+             
 
             }
             
@@ -185,7 +225,7 @@ var clickobj=null;
                var newsid=ckitem.value;                                           
                var rowobj=document.getElementById(newsid);         
                       rowobj.style.background="";                    
-           } 
+           } bindDEV
          } 
        } 
 
@@ -315,6 +355,7 @@ function showbg()
 
     holder.style.display="block";
 }
+
 function disdivbox()
 {
     disbg();
@@ -333,7 +374,6 @@ function disbg()
     var holder=document.getElementById("bgdiv");
     holder.style.display="none";
 }
-
 
 </script>
 <style type="text/css">
@@ -363,65 +403,90 @@ function disbg()
       <tr>
         <td colspan="5"><table width="100%" border="0" cellpadding="0" cellspacing="0">
           <tr width="100%">
-            <td width="66%" height="25" background="html/images/backt.jpg">&nbsp;</td>
-            <td width="34%" align="right" background="html/images/backt.jpg"><img src="html/images/sign.gif" width="20" height="16"  style="cursor:pointer;" /><span  style="cursor:pointer;">UPDATE</span><img src="html/images/done.gif" width="20" height="16" onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage1.html');" style="cursor:pointer;"/><span onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage1.html');" style="cursor:pointer;">ADD</span></td>
+            <td width="70%" height="25" background="html/images/backt.jpg">&nbsp;</td>
+            <td width="30%" align="center" background="html/images/backt.jpg" valign="middle"><img src="html/images/newico.gif" alt="1" width="18" height="15"  style="cursor:pointer;" onClick="bind(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('BIND DEV',800,600,'innerbind.php?owner=<?php echo $username; ?>');">bindDEV</span>&nbsp;</td>
+
           </tr>
         </table></td>
         </tr>
-      <tr>
-        <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright" id="3"><label>
-          <input type="checkbox" name="checkall" id="checkall" value="checkbox" onClick="checkselect();" />
+     
+<tr>
+        <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright" id="0"><label>
+          
         </label></td>
         <td width="57%" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
-<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
-<td width="33%" align="center" background="html/images/grid-blue-hd.gif" class="onlyr">NAME</td>
-<td width="33%" align="center" background="html/images/grid-blue-hd.gif" class="onlyr">ZONE</td>
-<td width="33%" align="center" background="html/images/grid-blue-hd.gif" >TYPE</td>
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0"  >
+<td width="45%" align="center" background="html/images/grid-blue-hd.gif" class="onlybot">&nbsp;</td>
+
+<td width="55%" align="left" background="html/images/grid-blue-hd.gif" >DEV_DOMAIN</td> 
 </table>
 </td>
         
-        <td width="13%" align="center" background="html/images/grid-blue-hd.gif" class="topandright">VALUE</td>
-        <td width="10%" align="center" background="html/images/grid-blue-hd.gif" class="topandright">OWNER</td>
-        <td width="17%" align="center" background="html/images/grid-blue-hd.gif" class="onlytop">MANAGE</td>
-      </tr>
-        
-      <tr id="1" onMouseOver="mover(1);" onMouseOut="mout(1);">
-        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
-          <input type="checkbox" name="newsid" value="1" id="c1" />
-        </td>
-        <td align="center" class="topandright2" onClick="rowselect(1);">
-<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
-<td width="33%" align="center" class="onlyright"></td>
-<td width="33%" align="center"  class="onlyright"></td>
-<td width="33%" align="center" ></td>
-</table>
-</td>
-        <td align="center" class="topandright2" onClick="rowselect(1);" >&nbsp;</td>
-        <td align="center" class="topandright2" onClick="rowselect(1);">&nbsp;</td>
-        <td align="center" class="onlytop"><img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('UPDATE DDNS',800,600,'modifypage3.html');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('UPDATE DDNS',800,600,'modifypage3.html');">MODIFY</span>&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(1)"/><span style="cursor:pointer" onClick="del(1)">DELETE</span></td>
-      </tr>
-      
-      <tr style="background:#E8EFF7;" id="2" onMouseOver="mover(2);" onMouseOut="mout(2);">
+        <td width="13%" align="center" background="html/images/grid-blue-hd.gif" class="onlytop">&nbsp;</td>
+        <td width="17%" align="left" background="html/images/grid-blue-hd.gif" class="onlytop">CNAME_DYNAMIC</td>
+      </tr>     
+
+
+
+
+<tr style="background:#E8EFF7;" id="1" onMouseOver="mover(1);" onMouseOut="mout(1);">
         <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
-          <input type="checkbox" name="newsid" value="2"  id="c2"/>
+          <input type="checkbox" name="ipsid" value="1"  id="c1"/>
+        </label></td>
+        <td align="center" class="topandright1" onClick="rowselect(1);">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.anjuke.com"; ?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.anjuke.com";?></td>
+</table></td>
+
+         <td align="right" class="onlytop1" onClick="rowselect(1);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $name.".".$username.".d.corp.anjuke.com"?></td>
+         <td align="left" class="onlytop1" onClick="rowselect(1);">&nbsp;&nbsp;        
+</tr>
+
+<tr style="background:#E8EFF7;" id="2" onMouseOver="mover(2);" onMouseOut="mout(2);">
+        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
+          <input type="checkbox" name="ipsid" value="2"  id="c2"/>
         </label></td>
         <td align="center" class="topandright1" onClick="rowselect(2);">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
-<td width="33%" align="center"  class="onlyright"></td>
-<td width="33%" align="center"  class="onlyright"></td>
-<td width="33%" align="center"  ></td>
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.aifang.com"?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.aifang.com"?></td>
 </table></td>
-        <td align="center" class="topandright1" onClick="rowselect(2);">&nbsp; </td>
-        <td align="center" class="topandright1" onClick="rowselect(2);">&nbsp;</td>
-        <td align="center" class="onlytop1"><img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('UPDATE DDNS',800,600,'modifypage3.html');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('UPDATE DDNS',800,600,'modifypage3.html');">MODIFY</span>&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(2)"/><span style="cursor:pointer" onClick="del(2)">DELETE</span>
-      </tr>
-    </table></td>
-    <td width="9" background="html/images/tab2.jpg">&nbsp;</td>
-  </tr>
-  <tr>
-    <td height="20" colspan="3" background="html/images/tab.jpg">&nbsp;</td>
-  </tr>
+
+         <td align="right" class="onlytop1" onClick="rowselect(2);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $name.".".$username.".d.corp.anjuke.com"?></td>
+         <td align="left" class="onlytop1" onClick="rowselect(2);">&nbsp;&nbsp;        
+</tr>
+
+<tr style="background:#E8EFF7;" id="3" onMouseOver="mover(3);" onMouseOut="mout(3);">
+        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
+          <input type="checkbox" name="ipsid" value="3"  id="c3"/>
+        </label></td>
+        <td align="center" class="topandright1" onClick="rowselect(3);">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.haozu.com"?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.haozu.com"?></td>
+</table></td>
+
+         <td align="right" class="onlytop1" onClick="rowselect(3);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $name.".".$username.".d.corp.anjuke.com"?></td>
+         <td align="left" class="onlytop1" onClick="rowselect(3);">&nbsp;&nbsp;        
+</tr>
+
+<tr style="background:#E8EFF7;" id="4" onMouseOver="mover(4);" onMouseOut="mout(4);">
+        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
+          <input type="checkbox" name="ipsid" value="4"  id="c4"/>
+        </label></td>
+        <td align="center" class="topandright1" onClick="rowselect(4);">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.jinpu.com"?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.jinpu.com"?></td>
+</table></td>
+
+         <td align="right" class="onlytop1" onClick="rowselect(4);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $name.".".$username.".d.corp.anjuke.com"?></td>
+         <td align="left" class="onlytop1" onClick="rowselect(4);">&nbsp;&nbsp;        
+</tr>
+     
+
   
-</table>
+</table></td>
     </body>
 </html>

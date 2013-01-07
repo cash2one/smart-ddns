@@ -207,7 +207,7 @@ function bindDev(id)
 $.get("bindDev.php",{'id':id},function(result){
 	if(result['status']){
 		randomnum=Math.random();
-		parent.goiframes("secondpage.php?random="+randomnum);
+		parent.goiframes("bindDEV.php?random="+randomnum);
 	}
 	else{
 		alert(result['msg']);
@@ -215,6 +215,12 @@ $.get("bindDev.php",{'id':id},function(result){
    },"json");	
 }
 
+function bindDev1()
+{
+	randomnum = Math.random();
+	parent.goiframes("bindDEV.php?random="+randomnum);
+	parent.disdivbox();
+}
 
 function updatekey()
 {

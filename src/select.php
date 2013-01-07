@@ -26,6 +26,8 @@
         mysql_close($con);
         return $result; 
     }
+    
+    
 
     function getAllUsers()
     {
@@ -48,4 +50,16 @@
         else
             return 0;
     }
+    
+    function getBind()
+    {
+    	require ("conn.php");
+    	$sql="select * from $dns_table where if_bind=1";
+    	$result=mysql_query($sql,$con);
+    	mysql_close($con);
+    	return $result;
+    	
+    }
+    
+    
 ?>

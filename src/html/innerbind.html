@@ -1,4 +1,11 @@
-<?php global $userinfo; ?>
+<?php global $userinfo;
+$username=$userinfo['username'];
+$result=getBind();
+while($row=mysql_fetch_array($result))
+{
+$name=$row['name'];
+}
+ ?>
 <html>
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -85,6 +92,16 @@ display:none;
 	border-right-color: #999;
         border-bottom-color: #999;
 }
+
+.onlybot
+{
+
+        border-bottom-width: 1px;
+	
+	
+        border-bottom-color: #999;
+}
+
 .topandright {
 	border-top-width: 1px;
 	border-right-width: 1px;
@@ -208,7 +225,7 @@ var clickobj=null;
                var newsid=ckitem.value;                                           
                var rowobj=document.getElementById(newsid);         
                       rowobj.style.background="";                    
-           } 
+           } bindDEV
          } 
        } 
 
@@ -382,67 +399,62 @@ function disbg()
   </tr>
   <tr>
     <td width="9" background="html/images/tab2.jpg">&nbsp;</td>
-    <td valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="borderall">
+    <td valign="top" align="center"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="borderall" >
       <tr>
         <td colspan="5"><table width="100%" border="0" cellpadding="0" cellspacing="0">
           <tr width="100%">
-            <td width="66%" height="25" background="html/images/backt.jpg">&nbsp;</td>
-            <td width="34%" align="right" background="html/images/backt.jpg"><img src="html/images/done.gif" width="20" height="16" onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage.php');" style="cursor:pointer;"/><span onClick="window.parent.showfuncbox('ADD DDNS',800,600,'addpage.php');" style="cursor:pointer;">ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="html/images/schoollist.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick=""/><span style="cursor:pointer" onClick="updatekey();">UPDATE KEY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td width="70%" height="25" background="html/images/backt.jpg">&nbsp;</td>
+            <td width="30%" align="center" background="html/images/backt.jpg" valign="middle">&nbsp;</td>
 
           </tr>
         </table></td>
         </tr>
-     <tr>
-        <td width="3%" height="21" align="center"  class="onlytop" id="3"><label>
-         
-        </label></td>
-        <td width="57%" align="center"  class="topandright">
-<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
-    <td width="50%" align="center"  >你的动态域名：<?php echo $userinfo['username'].".d.corp.anjuke.com"; ?></td>
-
-    <td width="50%" align="center"  >绑定的IP: <?php $u=$userinfo['username']; $d='@'; echo getBindIP($u,$d);  ?></td>
-</table>
-</td>
-        
-        <td colspan=2 width="15%" align="center"  class="onlytop">&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY BANDING INFORMATION',800,600,'modifypage.php');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="
-    html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('API INFORMATION',800,200,'apipage.php');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('API INFORMATION',800,200,'apipage.php');">AUTO-BIND</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      </tr>
+     
 <tr>
-        <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright" id="3"><label>
+        <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright" id="0"><label>
           
         </label></td>
         <td width="57%" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0"  >
-<td width="50%" align="center" background="html/images/grid-blue-hd.gif" class="randu">NAME</td>
+<td width="50%" align="center" background="html/images/grid-blue-hd.gif" class="randu">&nbsp;NAME</td>
 
 <td width="50%" align="center" background="html/images/grid-blue-hd.gif" >IP</td> 
 </table>
 </td>
         
-        <td width="13%" align="center" background="html/images/grid-blue-hd.gif" class="onlytop">&nbsp;</td>
-        <td width="17%" align="left" background="html/images/grid-blue-hd.gif" class="onlytop">MANAGE</td>
+        <td width="15%" align="right" background="html/images/grid-blue-hd.gif" class="onlytop">&nbsp;MANAGE</td>
+        <td width="15%" align="left" background="html/images/grid-blue-hd.gif" class="onlytop">&nbsp;</td>
       </tr>     
+
 <?php $result=getAll($userinfo['username']); while($row = mysql_fetch_array($result)) { 
         $id=$row['id'];  ?>
-<tr style="background:#E8EFF7;" id="<?php echo $id; ?>" onMouseOver="mover(<?php echo $id; ?>);" onMouseOut="mout(<?php echo $id; ?>);">
+
+<tr style="background:#E8EFF7;" id="<?php echo $id?>" onMouseOver="mover(<?php echo $id?>);" onMouseOut="mout(<?php echo $id?>);">
         <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
-          <input type="checkbox" name="ipsid" value="<?php echo $id; ?>"  id="c<?php echo $id; ?>"/>
+          <input type="checkbox" name="ipsid" value="<?php echo $id?>"  id="c<?php echo $id?>"/>
         </label></td>
-        <td align="center" class="topandright1" onClick="rowselect(<?php echo $id; ?>);">
+        <td align="center" class="topandright1" onClick="rowselect(<?php echo $id?>);">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
-<td width="50%" align="center"  class="onlyright"><?php echo $row['name']; ?></td>
-<td width="50%" align="center"  ><?php echo $row['value']; ?></td>
-
+<td width="50%" align="center"  class="onlyright"><?php echo $row['name']?></td>
+<td width="50%" align="center"  ><?php echo $row['value']?></td>
 </table></td>
 
-         <td align="right" class="onlytop1" onClick="rowselect(<?php echo $id; ?>);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/sign.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('MODIFY DNS',800,600,'modifypage2.php?id=<?php echo $id; ?>');">MODIFY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td align="left" class="onlytop1">&nbsp;&nbsp;<img src="html/images/undo.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="del(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="del(<?php echo $id; ?>)">DELETE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/bat.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');"/><span style="cursor:pointer" onClick="window.parent.showfuncbox('api information',800,200,'apipage.php?id=<?php echo $id; ?>');">AUTO-BIND</span>
+         <td align="right" class="onlytop1" onClick="rowselect(<?php echo $id?>);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="html/images/newico.gif" alt="1" width="20" height="16"  style="cursor:pointer;" onClick="bind(<?php echo $id; ?>)"/><span style="cursor:pointer" onClick="bind(<?php echo $id; ?>)">BindDevDNS</span></td>
+         <td align="left" class="onlytop1" onClick="rowselect(<?php echo $id?>);">&nbsp;&nbsp;        
+</tr>
 
-        
-      </tr>
-     <?php } ?> 
 
+
+<?php } ?>
+
+
+     
+<tr>
+
+</tr>
   
-</table></td>
+</table>
+<br>
+<input name="button" type="button" class="btnQQ" id="button" value="确    认" onClick="bindDev1();" ></td>
     </body>
 </html>

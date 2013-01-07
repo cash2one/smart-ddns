@@ -7,9 +7,7 @@ if(!empty($_GET['id'])&&filter_var($_GET['id'],FILTER_VALIDATE_INT))
 	$id=$_GET['id'];
 	$result=bindRecord($id,$username);
 	if(!$result['status'])
-		$result['msg']="绑定失败";
-	
-	
+		$result['msg']="绑定失败";	
 }
 else
     echo "error";
