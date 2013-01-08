@@ -199,6 +199,7 @@ function delDns(id)
         
             randomnum = Math.random();
             parent.goiframes('secondpage.php?random=' + randomnum);
+            
          if(result['status']==false){
             alert(result['msg']);
         }

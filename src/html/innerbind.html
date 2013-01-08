@@ -101,7 +101,24 @@ display:none;
 	
         border-bottom-color: #999;
 }
+.onlybot2
+{
+ border-bottom-width: 1px;
+border-bottom-style: solid;	
+border-bottom-color: #ccc;
+}
+.topandbottomx
+{
+    border-bottom-width:1px;
+    border-top-width: 1px;
+	
+	border-top-style: solid;
 
+	border-bottom-style: solid;
+	border-bottom-color: #ccc;
+	border-top-color: #999;
+	
+}
 .topandright {
 	border-top-width: 1px;
 	border-right-width: 1px;
@@ -153,7 +170,7 @@ display:none;
 }
 
 .menu-toptit {
-	font-size: 12px;
+	font-size: 12px;left
 	color: #2E4B85;
 	height: 27px;
 	padding-left:40px;
@@ -353,7 +370,7 @@ function showbg()
     else
         holder.style.height=document.body.scrollHeight;
 
-    holder.style.display="block";
+    holder.style.display="block";require("sql2config.php");
 }
 
 function disdivbox()
@@ -387,7 +404,7 @@ function disbg()
          <table border="0" cellpadding="0" cellspacing="0" class="block" id="divbox" style="position:absolute;display:none;z-index:2000;">
             <tr>
                 <td colspan="2" class="block-title" id="divtitle" style="float:left;font-size: 12px;">&nbsp;</td>
-                <td align="right"><img src="html/images/close3.gif" style="cursor:pointer" width="20" height="20" onClick="bindDev1();" >&nbsp;</td>
+                <td align="right"><img src="html/images/close3.gif" style="cursor:pointer" width="20" height="20" onClick="bindDev2();" >&nbsp;</td>
             </tr>
             <tr>
                 <td width="1057" colspan="3" class="block-body"> <iframe src='' id="contentframes" name="contentframes" frameborder='0'></iframe></td>
@@ -411,9 +428,7 @@ function disbg()
         </tr>
      
 <tr>
-        <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright" id="0"><label>
-          
-        </label></td>
+        <td width="3%" height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandbottomx" id="0">&nbsp;</td>
         <td width="57%" align="center" background="html/images/grid-blue-hd.gif" class="topandright">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0"  >
 <td width="50%" align="center" background="html/images/grid-blue-hd.gif" class="randu">&nbsp;NAME</td>
@@ -430,11 +445,9 @@ function disbg()
         $id=$row['id'];  ?>
 
 <tr style="background:#E8EFF7;" id="<?php echo $id?>" onMouseOver="mover(<?php echo $id?>);" onMouseOut="mout(<?php echo $id?>);">
-        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
-          <input type="checkbox" name="ipsid" value="<?php echo $id?>"  id="c<?php echo $id?>"/>
-        </label></td>
+        <td height="21" align="center" class="onlybot2">&nbsp;</td>
         <td align="center" class="topandright1" onClick="rowselect(<?php echo $id?>);">
-<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0" >
 <td width="50%" align="center"  class="onlyright"><?php echo $row['name'].".".$row['owner'].".d.corp.anjuke.com"?></td>
 <td width="50%" align="center"  ><?php echo $row['value']?></td>
 </table></td>
@@ -455,6 +468,6 @@ function disbg()
   
 </table>
 <br>
-<input name="button" type="button" class="btnQQ" id="button" value="确    认" onClick="bindDev1();" ></td>
+<input name="button" type="button" class="btnQQ" id="button" value="完   成" onClick="bindDev1();" ></td>
     </body>
 </html>

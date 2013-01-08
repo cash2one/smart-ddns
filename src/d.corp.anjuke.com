@@ -20,15 +20,7 @@ config.lvandu    A    127.0.0.1
 duyifan-ivan.lvand    A    127.0.0.1
 xuzhiming.lvandu    A    1.1.1.1
 ivan21.    A    
-xuzhi.lvandu    A    21.21.21.21
 safd.yunlongxiao    A    5.6.4.2
 test4.yunlongxiao    A    64.56.2.1
 fdsa.yunlongxiao    A    15.25.68.1
 yunlongxiao    A     21.1.10.1
-5.lvandu    A    5.5.5.5
-1.lvandu    A    1.1.1.1
-2.lvandu    A    1.1.1.1
-3.lvandu    A    3.3.3.3
-12.lvandu    A    1.1.1.1
-6.lvandu    A    6.6.6.6
-123.lvandu    A    123.12.12.12
