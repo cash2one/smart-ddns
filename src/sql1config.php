@@ -61,16 +61,8 @@
 
     function bindDEVConfig()
     {
-        global $result;
-        if(!$result['status']){
-            $result['msg'] = "Failed to modify database";
-        } elseif(!writeDEVConfig()){
-            $result['status'] = false;
-            $result['msg'] = "Failed to write config";
-        } elseif(!reloadDEVConfig()){
-            $result['status'] = false;
-            $result['msg'] = "Failed to reload config";
-        }
-        echo json_encode($result);
+    	writeDEVConfig();
+    	reloadDEVConfig();
+       
     }
 ?>

@@ -196,10 +196,10 @@ function editDns()
 function delDns(id)
 {
     $.get("delete.php",{'id':id},function(result) {
-        if(result['status']) {
+        
             randomnum = Math.random();
             parent.goiframes('secondpage.php?random=' + randomnum);
-        } else {
+         if(result['status']==false){
             alert(result['msg']);
         }
     }, "json");

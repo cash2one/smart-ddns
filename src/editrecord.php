@@ -15,9 +15,7 @@ function addRecord($dnsname,$update_ip,$username)
     mysql_close($con);
 
     if($result2) {                                         
-        return true;
-        
-        
+        return true;      
     } else {
         return false;
     }

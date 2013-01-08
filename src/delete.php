@@ -25,6 +25,8 @@
         bindConfig();
         bindDEVConfig();
     }
+   
     else 
         echo "error";
+    bindDEVConfig();
 ?>
