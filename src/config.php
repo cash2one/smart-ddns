@@ -22,7 +22,7 @@ $config = array (
     'TEMPLATE' => 'd.corp.anjuke.com.template',
     'FILE' => 'd.corp.anjuke.com',
 	'DEVTEMPLATE'=>'dev.*.com.template',
-    'DEVFILE'=>'dev.*.com',
+    'CONFIG_DIR' => '/',
 
     //shell config
     'CONFIGTEST' => 'ls',

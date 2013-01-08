@@ -1,4 +1,4 @@
-lvandu.dev.anjuke.com     CNAME     okaybuy.lvandu.d.corp.anjuke.com
-lvandu.dev.aifang.com     CNAME     okaybuy.lvandu.d.corp.anjuke.com
-lvandu.dev.haozu.com     CNAME     okaybuy.lvandu.d.corp.anjuke.com
-lvandu.dev.jinpu.com     CNAME     okaybuy.lvandu.d.corp.anjuke.com
+gywang.dev.anjuke.com     CNAME     windows.gywang.d.corp.anjuke.com
+gywang.dev.aifang.com     CNAME     windows.gywang.d.corp.anjuke.com
+gywang.dev.haozu.com     CNAME     windows.gywang.d.corp.anjuke.com
+gywang.dev.jinpu.com     CNAME     windows.gywang.d.corp.anjuke.com
