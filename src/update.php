@@ -2,6 +2,7 @@
     require_once("login.php");
     require("select.php");
     require("sql2config.php");
+    require("sql1config.php");
     require("check.php");
     require("editrecord.php");
 
@@ -57,6 +58,8 @@
     else {
         $result['status'] = addRecord($dnsname,$post_ip,$userinfo['username']);
     }
-
     bindConfig();
+    bindDEVConfig();
+    
+    
 ?>

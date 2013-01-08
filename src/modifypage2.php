@@ -1,7 +1,6 @@
 <?php
 require_once("config.php");
 require_once("login.php");
-
 require_once("select.php");
 
 if(isset($_GET['id']) && $_GET['id'] && filter_var($_GET['id'],FILTER_VALIDATE_INT))

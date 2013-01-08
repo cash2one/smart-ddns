@@ -1,10 +1,12 @@
 <?php global $userinfo;
 $username=$userinfo['username'];
-$result=getBind();
+$result=getBind($username);
+$name=1;
 while($row=mysql_fetch_array($result))
 {
 $name=$row['name'];
 }
+
  ?>
 <html>
 <head>
@@ -426,7 +428,10 @@ function disbg()
         <td width="17%" align="left" background="html/images/grid-blue-hd.gif" class="onlytop">CNAME_DYNAMIC</td>
       </tr>     
 
-
+<?php
+if ($name!=1)
+{
+?>
 
 
 <tr style="background:#E8EFF7;" id="1" onMouseOver="mover(1);" onMouseOut="mout(1);">
@@ -486,7 +491,78 @@ function disbg()
 </tr>
      
 
-  
+<?php
+}
+?>
+
+
+<?php
+if ($name==1)
+{
+?>
+
+
+<tr style="background:#E8EFF7;" id="1" onMouseOver="mover(1);" onMouseOut="mout(1);">
+        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
+          <input type="checkbox" name="ipsid" value="1"  id="c1"/>
+        </label></td>
+        <td align="center" class="topandright1" onClick="rowselect(1);">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.anjuke.com"; ?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.anjuke.com";?></td>
+</table></td>
+
+         <td align="right" class="onlytop1" onClick="rowselect(1);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td align="left" class="onlytop1" onClick="rowselect(1);">&nbsp;&nbsp;        
+</tr>
+
+<tr style="background:#E8EFF7;" id="2" onMouseOver="mover(2);" onMouseOut="mout(2);">
+        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
+          <input type="checkbox" name="ipsid" value="2"  id="c2"/>
+        </label></td>
+        <td align="center" class="topandright1" onClick="rowselect(2);">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.aifang.com"?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.aifang.com"?></td>
+</table></td>
+
+         <td align="right" class="onlytop1" onClick="rowselect(2);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td align="left" class="onlytop1" onClick="rowselect(2);">&nbsp;&nbsp;        
+</tr>
+
+<tr style="background:#E8EFF7;" id="3" onMouseOver="mover(3);" onMouseOut="mout(3);">
+        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
+          <input type="checkbox" name="ipsid" value="3"  id="c3"/>
+        </label></td>
+        <td align="center" class="topandright1" onClick="rowselect(3);">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.haozu.com"?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.haozu.com"?></td>
+</table></td>
+
+         <td align="right" class="onlytop1" onClick="rowselect(3);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td align="left" class="onlytop1" onClick="rowselect(3);">&nbsp;&nbsp;        
+</tr>
+
+<tr style="background:#E8EFF7;" id="4" onMouseOver="mover(4);" onMouseOut="mout(4);">
+        <td height="21" align="center" background="html/images/grid-blue-hd.gif" class="topandright"><label>
+          <input type="checkbox" name="ipsid" value="4"  id="c4"/>
+        </label></td>
+        <td align="center" class="topandright1" onClick="rowselect(4);">
+<table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
+<td width="50%" align="center"  class="onlyright"><?php echo $username.".dev.jinpu.com"?></td>
+<td width="50%" align="center"  ><?php echo "*.".$username.".dev.jinpu.com"?></td>
+</table></td>
+
+         <td align="right" class="onlytop1" onClick="rowselect(4);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td align="left" class="onlytop1" onClick="rowselect(4);">&nbsp;&nbsp;        
+</tr>
+     
+
+<?php
+}
+?>
+
 </table></td>
     </body>
 </html>

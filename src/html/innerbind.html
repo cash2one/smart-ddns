@@ -387,7 +387,7 @@ function disbg()
          <table border="0" cellpadding="0" cellspacing="0" class="block" id="divbox" style="position:absolute;display:none;z-index:2000;">
             <tr>
                 <td colspan="2" class="block-title" id="divtitle" style="float:left;font-size: 12px;">&nbsp;</td>
-                <td align="right"><img src="html/images/close3.gif" style="cursor:pointer" width="20" height="20" onClick="disdivbox();" >&nbsp;</td>
+                <td align="right"><img src="html/images/close3.gif" style="cursor:pointer" width="20" height="20" onClick="bindDev1();" >&nbsp;</td>
             </tr>
             <tr>
                 <td width="1057" colspan="3" class="block-body"> <iframe src='' id="contentframes" name="contentframes" frameborder='0'></iframe></td>
@@ -435,7 +435,7 @@ function disbg()
         </label></td>
         <td align="center" class="topandright1" onClick="rowselect(<?php echo $id?>);">
 <table width="100%" height="21" border="0" cellpadding="0" cellspacing="0">
-<td width="50%" align="center"  class="onlyright"><?php echo $row['name']?></td>
+<td width="50%" align="center"  class="onlyright"><?php echo $row['name'].".".$row['owner'].".d.corp.anjuke.com"?></td>
 <td width="50%" align="center"  ><?php echo $row['value']?></td>
 </table></td>
 

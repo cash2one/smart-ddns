@@ -37,6 +37,8 @@
         mysql_close($con);
         return $result;
     }
+    
+    
 
     function getCount($username,$dnsname,$id)
     {
@@ -51,14 +53,13 @@
             return 0;
     }
     
-    function getBind()
+    function getBind($username)
     {
     	require ("conn.php");
-    	$sql="select * from $dns_table where if_bind=1";
+    	$sql="select * from $dns_table where if_bind=1 and owner='$username'";
     	$result=mysql_query($sql,$con);
     	mysql_close($con);
     	return $result;
-    	
     }
     
     

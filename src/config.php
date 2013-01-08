@@ -21,6 +21,8 @@ $config = array (
     //File config
     'TEMPLATE' => 'd.corp.anjuke.com.template',
     'FILE' => 'd.corp.anjuke.com',
+	'DEVTEMPLATE'=>'dev.*.com.template',
+    'DEVFILE'=>'dev.*.com',
 
     //shell config
     'CONFIGTEST' => 'ls',

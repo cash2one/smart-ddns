@@ -1,4 +1,5 @@
 <?php
+
 function addRecord($dnsname,$update_ip,$username)
 {
     require("conn.php");
@@ -15,6 +16,8 @@ function addRecord($dnsname,$update_ip,$username)
 
     if($result2) {                                         
         return true;
+        
+        
     } else {
         return false;
     }
@@ -28,6 +31,7 @@ function modifyRecord($id,$dnsname,$modify_ip)
     mysql_close($con);
     if($result) {
         return true;
+        
     } else {
         return false;
     }

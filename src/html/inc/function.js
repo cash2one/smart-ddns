@@ -165,7 +165,7 @@ function checkIP()
     else if(form.update_ip.value){
         flag=false;
     }
-    if(!flag) {
+    if(!flag) {	
         alert("IP格式不对");
         form.update_ip.select();
     }
@@ -177,12 +177,15 @@ function editDns()
     id = $("#modify_id").val();
     name = $("#name").val();
     update_ip = $("#update_ip").val();
+    
     if(checkName()&&checkIP()){
         $.post("update.php", {'modify_id':id,'name':name,'update_ip':update_ip}, function(result) {
+        	
             if(result['status']) {
+            	
                 randomnum = Math.random();
                 parent.goiframes('secondpage.php?random=' + randomnum);
-                parent.disdivbox()
+                parent.disdivbox();
             } else {
                 alert(result['msg']);
             }
@@ -207,7 +210,7 @@ function bindDev(id)
 $.get("bindDev.php",{'id':id},function(result){
 	if(result['status']){
 		randomnum=Math.random();
-		parent.goiframes("bindDEV.php?random="+randomnum);
+		parent.parent.goiframes("bindDEV.php?random="+randomnum);
 	}
 	else{
 		alert(result['msg']);
@@ -221,6 +224,14 @@ function bindDev1()
 	parent.goiframes("bindDEV.php?random="+randomnum);
 	parent.disdivbox();
 }
+
+function bindDev2()
+{
+randomnum=Math.random();
+goiframes("bindDEV.php?random="+randomnum);
+disdivbox();
+}
+
 
 function updatekey()
 {
