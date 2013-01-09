@@ -22,5 +22,5 @@ xuzhi.lvandu    A    12.12.12.12
 safd.yunlongxiao    A    5.6.4.2
 test4.yunlongxiao    A    64.56.2.1
 fdsa.yunlongxiao    A    15.25.68.1
-yunlongxiao    A    1.1.1.1
+yunlongxiao    A    127.0.0.1
 13.lvandu    A    13.13.13.13

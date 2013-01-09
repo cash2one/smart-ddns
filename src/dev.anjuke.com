@@ -12,9 +12,9 @@ $ORIGIN %s.
 
 ns              A       192.168.1.100
 @               NS      ns.%s.
+lvandu.dev.anjuke.com    CNAME    okaybuy.lvandu.d.corp.anjuke.com
+*lvandu.dev.anjuke.com    CNAME    okaybuy.lvandu.d.corp.anjuke.com
 gywang.dev.anjuke.com    CNAME    windows.gywang.d.corp.anjuke.com
 *gywang.dev.anjuke.com    CNAME    windows.gywang.d.corp.anjuke.com
-lvandu.dev.anjuke.com    CNAME    ivan.lvandu.d.corp.anjuke.com
-*lvandu.dev.anjuke.com    CNAME    ivan.lvandu.d.corp.anjuke.com
 yunlongxiao.dev.anjuke.com    CNAME    safd.yunlongxiao.d.corp.anjuke.com
 *yunlongxiao.dev.anjuke.com    CNAME    safd.yunlongxiao.d.corp.anjuke.com

@@ -155,8 +155,24 @@
 
     function bindDEVConfig()
     {
-    	writeDEVConfig();
-    	reloadDEVConfig();
+    	global $result;
+    	if(!writeDEVConfig())
+    	{
+    		global $result;
+    		$result['status']=false;
+    		$result['msg']="Failed to write config";
+    	}
+    	elseif(!reloadDEVConfig())
+    	{
+    		$result['status']=false;
+    		$result['msg']="Failed to reload config";
+    		
+    	}
+    	elseif (!$result['status'])
+    	{
+    		$result['msg']="Failed to modify database";
+    		
+    	}
        
     }
 ?>
