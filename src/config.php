@@ -22,6 +22,12 @@ $config = array (
     'TEMPLATE' => 'd.corp.anjuke.com.template',
     'FILE' => 'd.corp.anjuke.com',
 	'DEVTEMPLATE'=>'dev.*.com.template',
+	'DEVFILE'=>array(
+			'dev.anjuke.com',
+			'dev.aifang.com',
+			'dev.haozu.com',
+			'dev.jinpu.com',
+			),
 	'DEVFILE_anjuke'=>'dev.anjuke.com',
 	'DEVFILE_aifang'=>'dev.aifang.com',
 	'DEVFILE_haozu'=>'dev.haozu.com',

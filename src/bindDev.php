@@ -1,6 +1,6 @@
 <?php
 require_once("login.php");
-require ("sql1config.php");
+require ("sql2config.php");
 $username=$userinfo['username'];
 if(!empty($_GET['id'])&&filter_var($_GET['id'],FILTER_VALIDATE_INT))
 {

@@ -404,3 +404,10 @@ function jsSelectItemByValue(objSelect, objItemText) {
         alert("该select中 不存在该项");       
     }       
 }
+
+
+
+
+
+
+

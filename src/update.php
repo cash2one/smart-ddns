@@ -2,7 +2,6 @@
     require_once("login.php");
     require("select.php");
     require("sql2config.php");
-    require("sql1config.php");
     require("check.php");
     require("editrecord.php");
 

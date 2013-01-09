@@ -1,6 +1,6 @@
 $ORIGIN d.corp.anjuke.com
-okaybuy.lvandu    A    12.21.21.16
-lvandu    A    12.21.21.21
+okaybuy.lvandu    A    12.21.21.121
+lvandu    A    1.12.12.12
 gywang    A    192.168.200.1
 liuhuajian.lvandu    A    127.0.0.3
 smart.lvandu    A    1.1.1.1
@@ -22,5 +22,7 @@ xuzhi.lvandu    A    12.12.12.12
 safd.yunlongxiao    A    5.6.4.2
 test4.yunlongxiao    A    64.56.2.1
 fdsa.yunlongxiao    A    15.25.68.1
-yunlongxiao    A    127.0.0.1
+yunlongxiao    A    1.1.1.1
 13.lvandu    A    13.13.13.13
+ivan1.lvandu    A    1.1.1.1
+f.yunlongxiao    A    127.0.0.1

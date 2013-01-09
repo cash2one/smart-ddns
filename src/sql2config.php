@@ -1,6 +1,7 @@
 <?php
     require_once("select.php");
-
+    
+    
     function writeConfig()
     {
         global $config;
@@ -33,6 +34,96 @@
         }
         return true;
     }
+    
+    
+    
+    function writeDEVConfig()
+    {
+    	
+    	
+    	
+    	global $config;
+    	
+    	
+    	
+     
+    	$devtemplate = $config['DEVTEMPLATE'];
+    	
+    	
+    	
+    	
+    	
+    	for($i=0;$i<=3;$i++)
+    	{
+    		$devfile[$i]=$config['DEVFILE'][$i];   	
+
+    		
+    		
+    		if(!copy($devtemplate,$devfile[$i])) 
+    		{
+    			return false;
+    		}
+    		
+    		
+    		
+    		
+    		$fp=fopen("$devfile[$i]","a+");
+    		
+    		
+    		
+    		if($fp)
+    		{
+    			global $userinfo;
+    			$result=getAllif_bind();
+    			while($row=mysql_fetch_array($result))
+    			{
+    				if($row['name']=='@')
+    				{
+    					$line1=$row['owner'].".".$devfile[$i]."      CNAME     ".$row['owner'].".d.corp.anjuke.com"."\n";
+    					$line2="*.".$row['owner'].".".$devfile[$i]."      CNAME    ".$row['owner'].".d.corp.anjuke.com"."\n";
+    					
+    				}
+    				else 
+    				{
+    					$line1= $row['owner'].".".$devfile[$i]."      CNAME      ".$row['owner'].".d.corp.anjuke.com"."\n";
+    					$line2= "*.". $row['owner'].".".$devfile[$i]."      CNAME      ".$row['owner'].".d.corp.anjuke.com"."\n";
+    				}
+    				if(!fwrite($fp,$line1))
+    					return false;
+    				if(!fwrite($fp, $line2))
+    					return false;
+    			}
+    			fclose($fp);
+    		}
+    		else{
+    			return false;
+    	        }
+    	
+    	
+    	        
+    	        
+    	        
+    	        
+    	
+    	
+    	}
+    	
+    		
+    		
+    	
+    	
+    	
+    
+    
+    
+    
+    
+    
+    	return true;
+    }
+    
+    
+    
 
     function reloadConfig()
     {
@@ -60,4 +151,32 @@
         }
         echo json_encode($result);
     }
+    
+    
+    function bindDEVConfig()
+    {
+    	global $result;
+    	if(!writeDEVConfig())
+    	{
+    		global $result;
+    		$result['status']=false;
+    		$result['msg']="Failed to write config";
+    	}
+    	elseif(!reloadConfig())
+    	{
+    		$result['status']=false;
+    		$result['msg']="Failed to reload config";
+    
+    	}
+    	elseif (!$result['status'])
+    	{
+    		$result['msg']="Failed to modify database";
+    
+    	}
+    	 
+    }
+    
+    
+    
+    
 ?>
