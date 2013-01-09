@@ -53,6 +53,16 @@
             return 0;
     }
     
+    function getAllif_bind()
+    {
+    	require("conn.php");
+    	$sql="select * from $dns_table where if_bind=1";
+    	$result = mysql_query($sql,$con);
+    	mysql_close($con);
+    	return $result;
+    	
+    }
+    
     function getBind($username)
     {
     	require ("conn.php");

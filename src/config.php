@@ -22,6 +22,10 @@ $config = array (
     'TEMPLATE' => 'd.corp.anjuke.com.template',
     'FILE' => 'd.corp.anjuke.com',
 	'DEVTEMPLATE'=>'dev.*.com.template',
+	'DEVFILE_anjuke'=>'dev.anjuke.com',
+	'DEVFILE_aifang'=>'dev.aifang.com',
+	'DEVFILE_haozu'=>'dev.haozu.com',
+	'DEVFILE_jinpu'=>'dev.jinpu.com',
     'CONFIG_DIR' => '/',
 
     //shell config
