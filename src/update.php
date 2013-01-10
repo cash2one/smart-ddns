@@ -1,7 +1,8 @@
 <?php
+   
     require_once("login.php");
     require("select.php");
-    require("sql2config.php");
+   require("sql2config.php");
     require("check.php");
     require("editrecord.php");
 
@@ -53,12 +54,15 @@
     {
         $id = $_POST['modify_id'];
         $result['status'] = modifyRecord($id,$dnsname,$post_ip);
+      
     }
     else {
         $result['status'] = addRecord($dnsname,$post_ip,$userinfo['username']);
+        
     }
-    bindConfig();
     bindDEVConfig();
+   
+   
     
     
 ?>

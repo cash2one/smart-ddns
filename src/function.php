@@ -46,7 +46,7 @@ function decrypt($string, $key) {
     return $decrypted;
 }
 
-<<<<<<< HEAD
+
 function read_file($file) {
     return true;
 }
@@ -54,8 +54,7 @@ function read_file($file) {
 function write_file($file) {
     return true;
 }
-=======
+
 
 ?>
 
->>>>>>> 2be440f38548872b2e80f5b5dba5b0852f4b5ae0

@@ -63,15 +63,21 @@ function writeDEVConfig()
 				{
 					$line1 = $row['owner'] . "." . $devfile[$i].
                              "      CNAME     ".
-                             $row['owner'].".d.corp.anjuke.com\n";
-					$line2 = "*.".$row['owner'].".".$devfile[$i]."      CNAME    ".$row['name'].".".$row['owner'].".d.corp.anjuke.com"."\n";
+                             $row['owner'].".d.corp.anjuke.com"."\n";
+					$line2 = "*.".$row['owner'].".".$devfile[$i].
+					         "      CNAME    ".
+					         $row['owner'].".d.corp.anjuke.com"."\n";
 					
 				}
 				else 
 				{
-					#$line1= $row['owner'].".".$devfile[$i]."      CNAME      ".$row['name'].".".$row['owner'].".d.corp.anjuke.com"."\n";
-                    $line1 = sprintf("%s    CNAME    %s.%s.d.corp.anjuke.com\n", $row['owner'], $row['name'], $owner);
-					$line2= "*.". $row['owner'].".".$devfile[$i]."      CNAME      ".$row['name'].".".$row['owner'].".d.corp.anjuke.com"."\n";
+					$line1= $row['owner'].".".$devfile[$i].
+							"      CNAME      ".
+					        $row['name'].".".$row['owner'].".d.corp.anjuke.com"."\n";
+                    
+					$line2= "*.". $row['owner'].".".$devfile[$i].
+							"      CNAME      ".
+					        $row['name'].".".$row['owner'].".d.corp.anjuke.com"."\n";
 				}
 				if(!fwrite($fp,$line1))
 					return false;
@@ -100,27 +106,15 @@ function reloadConfig()
     return true;
 }
 
-function bindConfig()
-{
-    global $result;
-    if(!$result['status']){
-        $result['msg'] = "Failed to modify database";
-    } elseif(!writeConfig()){
-        $result['status'] = false;
-        $result['msg'] = "Failed to write config";
-    } elseif(!reloadConfig()){
-        $result['status'] = false;
-        $result['msg'] = "Failed to reload config";
-    }
-    echo json_encode($result);
-}
+
 
 
 function bindDEVConfig()
 {
-	if(!writeDEVConfig())
+	$result;
+	if(!writeDEVConfig()||!writeConfig())
 	{
-        //write config true
+		
 		$result['status']=false;
 		$result['msg']="Failed to write config";
 	}
@@ -129,11 +123,7 @@ function bindDEVConfig()
 		$result['status']=false;
 		$result['msg']="Failed to reload config";
 	}
-	elseif (!$result['status'])
-	{
-		$result['msg']="Failed to modify database";
-	}
-
-    echo json_encode($result);
+	
+	echo json_encode($result);
 }
 ?>

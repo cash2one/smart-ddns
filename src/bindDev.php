@@ -19,10 +19,10 @@ function bindRecord($id,$username)
 	require("conn.php");
 	$sql="update $dns_table set if_bind='' where owner='$username'";
 	$sql1="update $dns_table set if_bind=1 where id=$id and owner='$username'";
-	$result=mysql_query($sql,$con);
-	$result1=mysql_query($sql1,$con);
+	$result1=mysql_query($sql,$con);
+	$result=mysql_query($sql1,$con);
 	mysql_close($con);
-	if($result1)
+	if($result)
 	{
 		return true;
 	}

@@ -1,4 +1,5 @@
 <?php
+//echo "{\"status\":true}";
     require_once("login.php");
     require("sql2config.php");
     function deleteRecord($id,$username)
@@ -13,19 +14,27 @@
             return false;
         }
     }
+    
+    
 
     $username = $userinfo['username'];
+    
+    
+    
     if(!empty($_GET['id']) && filter_var($_GET['id'],FILTER_VALIDATE_INT))
     {
         $id = $_GET['id'];
         $result['status'] = deleteRecord($id,$username);
+        
         if(!$result['status'])
             $result['msg'] = "删除失败";
-        bindConfig();
+        
         bindDEVConfig();
+       
     }
    
     else 
         echo "error";
-    bindDEVConfig();
+   
+
 ?>

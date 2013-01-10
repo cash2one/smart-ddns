@@ -177,16 +177,17 @@ function editDns()
     id = $("#modify_id").val();
     name = $("#name").val();
     update_ip = $("#update_ip").val();
-    
+   
     if(checkName()&&checkIP()){
+    	 
         $.post("update.php", {'modify_id':id,'name':name,'update_ip':update_ip}, function(result) {
         	
-            if(result['status']) {
-            	
+            
+            //这边过不来，（用parent.disdivbox()调试)，应该是result['status']出了问题。=>update.php	
                 randomnum = Math.random();
                 parent.goiframes('ddnspage.php?random=' + randomnum);
                 parent.disdivbox();
-            } else {
+             if(result['status']==false) {
                 alert(result['msg']);
             }
         }, "json");
@@ -196,10 +197,9 @@ function editDns()
 function delDns(id)
 {
     $.get("delete.php",{'id':id},function(result) {
-        
+    	
             randomnum = Math.random();
             parent.goiframes('ddnspage.php?random=' + randomnum);
-            
          if(result['status']==false){
             alert(result['msg']);
         }
@@ -209,13 +209,10 @@ function delDns(id)
 function bindDev(id)
 {
 $.get("bindDev.php",{'id':id},function(result){
-	if(result['status']){
-		randomnum=Math.random();
-		parent.parent.goiframes("bindDEV.php?random="+randomnum);
-	}
-	else{
+	if(!result['status']){
 		alert(result['msg']);
-	    }
+	}
+	
    },"json");	
 }
 

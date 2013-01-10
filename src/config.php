@@ -29,7 +29,7 @@ $config = array (
         'dev.jinpu.com',
     ),
 
-    'CONFIG_DIR' => dirname(__FILE__),
+    'CONFIG_DIR' => 'dirname(__FILE__)',
 
     //shell config
     'CONFIGTEST' => 'ls',
