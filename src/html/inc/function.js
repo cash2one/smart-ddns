@@ -184,7 +184,7 @@ function editDns()
             if(result['status']) {
             	
                 randomnum = Math.random();
-                parent.goiframes('secondpage.php?random=' + randomnum);
+                parent.goiframes('ddnspage.php?random=' + randomnum);
                 parent.disdivbox();
             } else {
                 alert(result['msg']);
@@ -198,7 +198,7 @@ function delDns(id)
     $.get("delete.php",{'id':id},function(result) {
         
             randomnum = Math.random();
-            parent.goiframes('secondpage.php?random=' + randomnum);
+            parent.goiframes('ddnspage.php?random=' + randomnum);
             
          if(result['status']==false){
             alert(result['msg']);
@@ -226,12 +226,6 @@ function bindDev1()
 	parent.disdivbox();
 }
 
-function bindDev2()
-{
-randomnum=Math.random();
-goiframes("bindDEV.php?random="+randomnum);
-disdivbox();
-}
 
 
 function updatekey()
@@ -239,7 +233,7 @@ function updatekey()
     $.getJSON("updatekey.php",function(result){
         if(result['status']) {
             alert("更新成功");
-            parent.goiframes('secondpage.php?random=' + Math.random());
+            parent.goiframes('ddnspage.php?random=' + Math.random());
         } else {
             alert(result['msg']);
         }

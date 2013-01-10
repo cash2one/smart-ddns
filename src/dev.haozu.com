@@ -1,6 +1,6 @@
 $ORIGIN .
 $TTL 5
-%s               IN SOA  ns.%s. root.%s. (
+%s               IN SOA  ns.%d. root.%s. (
                                 %d ; serial time()
                                 10800      ; refresh (3 hours)
                                 900        ; retry (15 minutes)
@@ -12,5 +12,5 @@ $ORIGIN %s.
 
 ns              A       192.168.1.100
 @               NS      ns.%s.
-gywang.dev.anjuke.com      CNAME      gywang.windows.d.corp.anjuke.com
-*.gywang.dev.anjuke.com      CNAME      gywang.windows.d.corp.anjuke.com
+gywang.dev.haozu.com      CNAME      gywang.windows.d.corp.anjuke.com
+*.gywang.dev.haozu.com      CNAME      gywang.windows.d.corp.anjuke.com

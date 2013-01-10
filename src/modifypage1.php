@@ -13,5 +13,5 @@ if(isset($_GET['id']) && $_GET['id'] && filter_var($_GET['id'],FILTER_VALIDATE_I
     }
 }
 global $name_view,$ip_view;
-include("html/modifypage2.html");
+include("html/modifypage1.html");
 ?>

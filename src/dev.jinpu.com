@@ -14,5 +14,3 @@ ns              A       192.168.1.100
 @               NS      ns.%s.
 gywang.dev.jinpu.com      CNAME      gywang.windows.d.corp.anjuke.com
 *.gywang.dev.jinpu.com      CNAME      gywang.windows.d.corp.anjuke.com
-lvandu.dev.jinpu.com      CNAME      lvandu.lvan.d.corp.anjuke.com
-*.lvandu.dev.jinpu.com      CNAME      lvandu.lvan.d.corp.anjuke.com
