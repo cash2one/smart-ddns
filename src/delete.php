@@ -1,7 +1,6 @@
 <?php
     require_once("login.php");
     require("sql2config.php");
-    require("sql1config.php");
     function deleteRecord($id,$username)
     {
         require("conn.php");

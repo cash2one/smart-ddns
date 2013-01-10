@@ -12,9 +12,7 @@ $ORIGIN %s.
 
 ns              A       192.168.1.100
 @               NS      ns.%s.
-gywang.dev.aifang.com      CNAME      gywang.d.corp.anjuke.com
-*.gywang.dev.aifang.com      CNAME      gywang.d.corp.anjuke.com
-lvandu.dev.aifang.com      CNAME      lvandu.d.corp.anjuke.com
-*.lvandu.dev.aifang.com      CNAME      lvandu.d.corp.anjuke.com
-yunlongxiao.dev.aifang.com      CNAME      yunlongxiao.d.corp.anjuke.com
-*.yunlongxiao.dev.aifang.com      CNAME      yunlongxiao.d.corp.anjuke.com
+gywang.dev.aifang.com      CNAME      gywang.windows.d.corp.anjuke.com
+*.gywang.dev.aifang.com      CNAME      gywang.windows.d.corp.anjuke.com
+lvandu.dev.aifang.com      CNAME      lvandu.lvan.d.corp.anjuke.com
+*.lvandu.dev.aifang.com      CNAME      lvandu.lvan.d.corp.anjuke.com

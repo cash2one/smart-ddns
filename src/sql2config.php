@@ -79,14 +79,14 @@
     			{
     				if($row['name']=='@')
     				{
-    					$line1=$row['owner'].".".$devfile[$i]."      CNAME     ".$row['owner'].".d.corp.anjuke.com"."\n";
-    					$line2="*.".$row['owner'].".".$devfile[$i]."      CNAME    ".$row['owner'].".d.corp.anjuke.com"."\n";
+    					$line1=$row['owner'].".".$devfile[$i]."      CNAME     ".$row['owner'].".".$row['name'].".d.corp.anjuke.com"."\n";
+    					$line2="*.".$row['owner'].".".$devfile[$i]."      CNAME    ".$row['owner'].".".$row['name'].".d.corp.anjuke.com"."\n";
     					
     				}
     				else 
     				{
-    					$line1= $row['owner'].".".$devfile[$i]."      CNAME      ".$row['owner'].".d.corp.anjuke.com"."\n";
-    					$line2= "*.". $row['owner'].".".$devfile[$i]."      CNAME      ".$row['owner'].".d.corp.anjuke.com"."\n";
+    					$line1= $row['owner'].".".$devfile[$i]."      CNAME      ".$row['owner'].".".$row['name'].".d.corp.anjuke.com"."\n";
+    					$line2= "*.". $row['owner'].".".$devfile[$i]."      CNAME      ".$row['owner'].".".$row['name'].".d.corp.anjuke.com"."\n";
     				}
     				if(!fwrite($fp,$line1))
     					return false;

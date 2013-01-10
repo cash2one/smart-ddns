@@ -3,7 +3,6 @@ require("check.php");
 require("editrecord.php");
 require("key.php");
 require_once("sql2config.php");
-require_once ("sql1config.php");
 require("conn.php");
 
 if(!empty($_GET['dnsname']) && !empty($_GET['key']) && !empty($_GET['username'])) {
