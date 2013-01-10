@@ -8,10 +8,10 @@ $config = array (
     'PRODUCTION_CONFIG' => '/home/www/webapps/ddns-conf/config.php',
 
     //DB config
-     'DB_HOST' => '192.168.1.103',
-     'DB_USER' => 'caixh',
-     'DB_PASS' => 'caixh123',
-     'DB_NAME' => 'ddns',
+    'DB_HOST' => '192.168.1.103',
+    'DB_USER' => 'caixh',
+    'DB_PASS' => 'caixh123',
+    'DB_NAME' => 'ddns',
      
     //OAuth config
     'OAUTH_URL' => 'https://auth.corp.anjuke.com',
@@ -21,18 +21,15 @@ $config = array (
     //File config
     'TEMPLATE' => 'd.corp.anjuke.com.template',
     'FILE' => 'd.corp.anjuke.com',
-	'DEVTEMPLATE'=>'dev.*.com.template',
-	'DEVFILE'=>array(
-			'dev.anjuke.com',
-			'dev.aifang.com',
-			'dev.haozu.com',
-			'dev.jinpu.com',
-			),
-	'DEVFILE_anjuke'=>'dev.anjuke.com',
-	'DEVFILE_aifang'=>'dev.aifang.com',
-	'DEVFILE_haozu'=>'dev.haozu.com',
-	'DEVFILE_jinpu'=>'dev.jinpu.com',
-    'CONFIG_DIR' => '/',
+    'DEVTEMPLATE'=>'zone.template',
+    'DEVFILE'=>array(
+        'dev.anjuke.com',
+        'dev.aifang.com',
+        'dev.haozu.com',
+        'dev.jinpu.com',
+    ),
+
+    'CONFIG_DIR' => dirname(__FILE__),
 
     //shell config
     'CONFIGTEST' => 'ls',

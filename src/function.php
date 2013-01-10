@@ -45,3 +45,11 @@ function decrypt($string, $key) {
 
     return $decrypted;
 }
+
+function read_file($file) {
+    return true;
+}
+
+function write_file($file) {
+    return true;
+}

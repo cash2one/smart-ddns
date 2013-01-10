@@ -1,6 +1,6 @@
 $ORIGIN .
 $TTL 5
-%s               IN SOA  ns.%d. root.%s. (
+%s               IN SOA  ns.%s. root.%s. (
                                 %d ; serial time()
                                 10800      ; refresh (3 hours)
                                 900        ; retry (15 minutes)
