@@ -45,3 +45,7 @@ function decrypt($string, $key) {
 
     return $decrypted;
 }
+
+
+?>
+

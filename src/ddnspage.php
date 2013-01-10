@@ -1,5 +1,6 @@
 <?php
 require_once("login.php");
 require_once("select.php");
-include("html/innerbind.html");
+require_once("genapi.php");
+include("html/ddnspage.html");
 ?>
